@@ -135,6 +135,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.RData
+.RHistory
 
 # Spyder project settings
 .spyderproject
@@ -172,8 +174,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
 *.code-workspace
 .DS_Store
 
+# file to ignore
 textbook/
+Hung-Yi Lee/
+a100apply.*
