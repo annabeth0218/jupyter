@@ -1,98 +1,158 @@
 [
-  {
-    "idx": 0,
-    "id": "S321-25597_23",
-    "image": "epithelioid cell type and prominent nucleoli (arrow).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a well-circumscribed, round to oval lesion with a central scar. The lesion is composed of a mixture of fibrous tissue, adipose tissue, and a few scattered lymphocytes. The central scar is composed of dense collagen fibers and is surrounded by a rim of fibroblasts. The lesion is surrounded by a thin layer of adipose tissue.\n\nPathologic interpretation: The lesion is consistent with a benign lipoma. Lipomas are common, benign tumors composed of mature adipose tissue. They are usually asymptomatic and do not require treatment unless they cause cosmetic concerns or are located in a functionally important area. The central scar is a common finding in lipomas and is thought to represent a focal area of fibrosis. The presence of a few scattered lymphocytes is not significant and is likely due to the inflammatory response to the presence of the tumor.",
-    "reference": "Microscopic findings: Epithelioid melanoma cells with prominent nucleoli are present.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 1,
-    "id": "S321-25597_24",
-    "image": "low power shows a tumor in the subretinal area.jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a section of lung tissue with a well-defined, sharply demarcated area of inflammation. The lesion is composed of a mixture of neutrophils, lymphocytes, and macrophages, which are arranged in a diffuse pattern. There is no evidence of necrosis or granuloma formation. The surrounding lung tissue appears normal, with intact alveolar walls and normal bronchial epithelium. Based on these findings, the likely pathologic interpretation is acute bronchopneumonia.",
-    "reference": "Microscopic findings: Low power view shows an intraocular melanoma mass involving the posterior choroid/subretinal region.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 2,
-    "id": "S321-25597_25",
-    "image": "mitotic figure (arrow) (2).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a well-demarcated, circumscribed lesion with a central area of necrosis. The surrounding tissue is composed of a mixture of inflammatory cells, including lymphocytes, plasma cells, and eosinophils. The central necrotic area is surrounded by a rim of granulation tissue, which is composed of fibroblasts and capillaries. The lesion is surrounded by a thin layer of connective tissue. The cellular morphology is consistent with a granulomatous inflammatory response, which is commonly seen in infections, autoimmune diseases, and certain neoplastic conditions. The likely pathologic interpretation is a granulomatous inflammatory lesion, which could be due to an infectious agent, such as Mycobacterium tuberculosis or fungi, or an autoimmune disease, such as sarcoidosis. Further molecular testing and clinical correlation would be necessary to confirm the diagnosis.",
-    "reference": "Microscopic findings: Mitotic activity is identified in the melanoma cells.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 3,
-    "id": "S321-25597_26",
-    "image": "mitotic figure (arrow).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The biopsy specimen shows a well-demarcated, circumscribed, and encapsulated mass composed of spindle cells with a storiform pattern. The cells have moderate to abundant eosinophilic cytoplasm, elongated nuclei, and prominent nucleoli. There is no evidence of necrosis or mitotic activity. The surrounding stroma is fibrotic and shows mild chronic inflammation. The lesion is likely a benign fibrous histiocytoma.\n\nPathologic interpretation: The lesion is a benign fibrous histiocytoma, a rare benign soft tissue tumor composed of spindle cells with a storiform pattern. The cells have moderate to abundant eosinophilic cytoplasm, elongated nuclei, and prominent nucleoli. The surrounding stroma is fibrotic and shows mild chronic inflammation. There is no evidence of necrosis or mitotic activity. The lesion is well-demarcated, circumscribed, and encapsulated, which supports a benign diagnosis. No further molecular tests or treatment are",
-    "reference": "Microscopic findings: Mitotic activity is identified in the melanoma cells.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 4,
-    "id": "S321-25597_27",
-    "image": "spindle A cell type has nuclear grooving (arrow).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a well-demarcated, round to oval-shaped lesion with a central area of necrosis. The surrounding tissue is composed of a mixture of inflammatory cells, including lymphocytes, plasma cells, and neutrophils. The central necrotic area is surrounded by a rim of granulation tissue, which is composed of fibroblasts and capillaries. The lesion is surrounded by a thin layer of connective tissue. The cellular morphology is consistent with a granulomatous inflammation, which is commonly seen in infectious diseases such as tuberculosis or fungal infections. The pathologic interpretation is consistent with a granulomatous inflammation, likely due to an infectious process.",
-    "reference": "Microscopic findings: Spindle A melanoma cells with nuclear grooves are present.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 5,
-    "id": "S321-25597_28",
-    "image": "spindle B cell type (arrow).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The specimen shows a well-demarcated, circumscribed, and encapsulated mass. The mass is composed of a mixture of spindle cells and epithelial cells. The spindle cells are arranged in a storiform pattern, with some areas showing a fascicular arrangement. The epithelial cells are cuboidal to columnar, with moderate to abundant eosinophilic cytoplasm and round to oval nuclei. There is no evidence of necrosis or mitotic activity. The mass is surrounded by a thin layer of fibrous tissue.\n\nPathologic interpretation: The findings are consistent with a benign fibroepithelial tumor, specifically a fibroepithelial polyp. This is a common benign tumor of the skin and subcutaneous tissue, and is typically asymptomatic. Treatment is usually surgical excision, and the prognosis is excellent.",
-    "reference": "Microscopic findings: Spindle B melanoma cells are present.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 6,
-    "id": "S321-25597_29",
-    "image": "spindle cell type (arrow).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a well-demarcated, solid, and nodular lesion with a central area of necrosis. The cells are polygonal, with abundant eosinophilic cytoplasm and prominent nucleoli. The nuclei are large, irregular, and pleomorphic. There is a marked nuclear atypia and mitotic activity. The stroma is scant and shows no evidence of inflammation or vasculitis. The lesion is likely to be a malignant neoplasm, most likely a sarcoma or a carcinoma. Further molecular testing and immunohistochemistry may be required to determine the exact diagnosis and subtype.",
-    "reference": "Microscopic findings: Spindle melanoma cells are present.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 7,
-    "id": "S321-25597_20",
-    "image": "spoindle B cell type (arrow).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The biopsy specimen shows a well-demarcated, circumscribed, and encapsulated mass composed of spindle cells with a storiform pattern. The cells have moderate eosinophilic cytoplasm, elongated nuclei, and prominent nucleoli. There is a marked cellular atypia and mitotic activity is present. The mass is surrounded by a thin fibrous capsule. The surrounding stroma is edematous and shows mild chronic inflammatory infiltrate.\n\nPathologic interpretation: The findings are consistent with a diagnosis of malignant fibrous histiocytoma (MFH). MFH is a rare, aggressive soft tissue sarcoma that typically affects adults. It is characterized by a storiform pattern of spindle cells with moderate cellular atypia and mitotic activity. The presence of a thin fibrous capsule and edematous stroma is also consistent with MFH. Further molecular testing may be required to confirm the diagnosis and guide treatment.",
-    "reference": "Microscopic findings: Spindle B melanoma cells are present.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 8,
-    "id": "S321-25597_21",
-    "image": "tumor invades sclera (2).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a section of lung tissue with a central area of necrosis surrounded by a ring of granulation tissue. The granulation tissue is composed of a mixture of inflammatory cells, including macrophages, lymphocytes, and plasma cells, as well as fibroblasts and vascular endothelial cells. The central necrotic area is filled with a mixture of cellular debris and fibrin. The surrounding lung parenchyma appears normal, with well-defined alveoli and normal lung architecture. The bronchi and bronchioles are lined by ciliated epithelium and contain a mixture of inflammatory cells and mucus. The overall appearance is consistent with a case of acute bronchopneumonia.",
-    "reference": "Microscopic findings: Melanoma invades the sclera.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 9,
-    "id": "S321-25597_32",
-    "image": "tumor invades sclera (circle).jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a section of lung tissue with a central area of necrosis surrounded by a ring of granulomatous inflammation. The granulomas are composed of epithelioid cells, lymphocytes, and occasional multinucleated giant cells. There is also evidence of fibrosis and fibroblastic proliferation in the surrounding tissue. The central necrotic area is filled with caseous material and contains numerous acid-fast bacilli, which are characteristic of Mycobacterium tuberculosis infection. The overall architecture of the lesion is consistent with a case of pulmonary tuberculosis.",
-    "reference": "Microscopic findings: Melanoma invades the sclera.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 10,
-    "id": "S321-25597_33",
-    "image": "tumor invades sclera.jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a section of a lymph node with a well-defined capsule and trabeculae. The paracortex is composed of a mixture of lymphocytes, plasma cells, and histiocytes. The germinal centers are present and appear to be active. The cortex is composed of a mixture of lymphocytes, plasma cells, and histiocytes. The medulla is composed of a mixture of lymphocytes, plasma cells, and histiocytes. The lymph node architecture is preserved, and there is no evidence of necrosis or inflammation. The cellular morphology is consistent with reactive lymphoid hyperplasia. The pathologic interpretation is consistent with reactive lymphoid hyperplasia.",
-    "reference": "Microscopic findings: Melanoma invades the sclera.\nPathological diagnosis: Choroidal melanoma"
-  },
-  {
-    "idx": 11,
-    "id": "S321-25597_34",
-    "image": "vitreous seeding of tumor cells.jpg",
-    "model": "../checkpoints/proj_ho82b.pt",
-    "caption": "Microscopic findings: The image shows a section of lung tissue with a central area of necrosis surrounded by a ring of granulation tissue. The granulation tissue is composed of a mixture of inflammatory cells, including macrophages, lymphocytes, and plasma cells. There is also evidence of fibroblastic proliferation and new blood vessel formation. The central necrotic area is filled with debris and contains a few neutrophils. The surrounding lung parenchyma appears normal, with intact alveolar walls and normal-appearing epithelial cells. Based on these findings, the most likely pathologic interpretation is that of a chronic granulomatous inflammation, possibly due to a fungal infection such as histoplasmosis or coccidioidomycosis. Further molecular testing may be necessary to confirm the diagnosis.",
-    "reference": "Microscopic findings: Pigmented melanoma cells are present in the vitreous, consistent with vitreous seeding.\nPathological diagnosis: Choroidal melanoma"
-  }
+    {
+        "idx": 0,
+        "id": "S321-25597_23",
+        "image": "epithelioid cell type and prominent nucleoli (arrow).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a well-circumscribed, round to oval lesion with a central scar. The lesion is composed of a mixture of fibrous tissue, adipose tissue, and a few scattered lymphocytes. The central scar is composed of dense collagen fibers and is surrounded by a rim of fibroblasts. The lesion is surrounded by a thin layer of adipose tissue.\n\nPathologic interpretation: The lesion is consistent with a benign lipoma. Lipomas are common, benign tumors composed of mature adipose tissue. They are usually asymptomatic and do not require treatment unless they cause cosmetic concerns or are located in a functionally important area. The central scar is a common finding in lipomas and is thought to represent a focal area of fibrosis. The presence of a few scattered lymphocytes is not significant and is likely due to the inflammatory response to the presence of the tumor.",
+        "gts": "Microscopic findings: Epithelioid melanoma cells with prominent nucleoli are present.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.027586206896361484,
+        "BLEU4": 3.1165656436147027e-10,
+        "ROUGE": 0.05998033431661749,
+        "METEOR": 0.21989508144992703,
+        "CIDEr-R": 7.223900915400332e-106
+    },
+    {
+        "idx": 1,
+        "id": "S321-25597_24",
+        "image": "low power shows a tumor in the subretinal area.jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a section of lung tissue with a well-defined, sharply demarcated area of inflammation. The lesion is composed of a mixture of neutrophils, lymphocytes, and macrophages, which are arranged in a diffuse pattern. There is no evidence of necrosis or granuloma formation. The surrounding lung tissue appears normal, with intact alveolar walls and normal bronchial epithelium. Based on these findings, the likely pathologic interpretation is acute bronchopneumonia.",
+        "gts": "Microscopic findings: Low power view shows an intraocular melanoma mass involving the posterior choroid/subretinal region.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.0563380281682206,
+        "BLEU4": 6.435560831383967e-10,
+        "ROUGE": 0.10070160957490713,
+        "METEOR": 0.14234875444839862,
+        "CIDEr-R": 3.653827950651503e-18
+    },
+    {
+        "idx": 2,
+        "id": "S321-25597_25",
+        "image": "mitotic figure (arrow) (2).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a well-demarcated, circumscribed lesion with a central area of necrosis. The surrounding tissue is composed of a mixture of inflammatory cells, including lymphocytes, plasma cells, and eosinophils. The central necrotic area is surrounded by a rim of granulation tissue, which is composed of fibroblasts and capillaries. The lesion is surrounded by a thin layer of connective tissue. The cellular morphology is consistent with a granulomatous inflammatory response, which is commonly seen in infections, autoimmune diseases, and certain neoplastic conditions. The likely pathologic interpretation is a granulomatous inflammatory lesion, which could be due to an infectious agent, such as Mycobacterium tuberculosis or fungi, or an autoimmune disease, such as sarcoidosis. Further molecular testing and clinical correlation would be necessary to confirm the diagnosis.",
+        "gts": "Microscopic findings: Mitotic activity is identified in the melanoma cells.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.039370078739847485,
+        "BLEU4": 3.76804438651845e-10,
+        "ROUGE": 0.0837222069722756,
+        "METEOR": 0.21183333333333335,
+        "CIDEr-R": 7.058131036240382e-79
+    },
+    {
+        "idx": 3,
+        "id": "S321-25597_26",
+        "image": "mitotic figure (arrow).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The biopsy specimen shows a well-demarcated, circumscribed, and encapsulated mass composed of spindle cells with a storiform pattern. The cells have moderate to abundant eosinophilic cytoplasm, elongated nuclei, and prominent nucleoli. There is no evidence of necrosis or mitotic activity. The surrounding stroma is fibrotic and shows mild chronic inflammation. The lesion is likely a benign fibrous histiocytoma.\n\nPathologic interpretation: The lesion is a benign fibrous histiocytoma, a rare benign soft tissue tumor composed of spindle cells with a storiform pattern. The cells have moderate to abundant eosinophilic cytoplasm, elongated nuclei, and prominent nucleoli. The surrounding stroma is fibrotic and shows mild chronic inflammation. There is no evidence of necrosis or mitotic activity. The lesion is well-demarcated, circumscribed, and encapsulated, which supports a benign diagnosis. No further molecular tests or treatment are",
+        "gts": "Microscopic findings: Mitotic activity is identified in the melanoma cells.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.022388059701325472,
+        "BLEU4": 3.141086506209648e-10,
+        "ROUGE": 0.048246770366464534,
+        "METEOR": 0.3064320388349515,
+        "CIDEr-R": 5.4079126775594324e-89
+    },
+    {
+        "idx": 4,
+        "id": "S321-25597_27",
+        "image": "spindle A cell type has nuclear grooving (arrow).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a well-demarcated, round to oval-shaped lesion with a central area of necrosis. The surrounding tissue is composed of a mixture of inflammatory cells, including lymphocytes, plasma cells, and neutrophils. The central necrotic area is surrounded by a rim of granulation tissue, which is composed of fibroblasts and capillaries. The lesion is surrounded by a thin layer of connective tissue. The cellular morphology is consistent with a granulomatous inflammation, which is commonly seen in infectious diseases such as tuberculosis or fungal infections. The pathologic interpretation is consistent with a granulomatous inflammation, likely due to an infectious process.",
+        "gts": "Microscopic findings: Spindle A melanoma cells with nuclear grooves are present.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.02970297029673562,
+        "BLEU4": 4.182969063790034e-10,
+        "ROUGE": 0.06041597887091449,
+        "METEOR": 0.21081249721442263,
+        "CIDEr-R": 6.226358621545016e-47
+    },
+    {
+        "idx": 5,
+        "id": "S321-25597_28",
+        "image": "spindle B cell type (arrow).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The specimen shows a well-demarcated, circumscribed, and encapsulated mass. The mass is composed of a mixture of spindle cells and epithelial cells. The spindle cells are arranged in a storiform pattern, with some areas showing a fascicular arrangement. The epithelial cells are cuboidal to columnar, with moderate to abundant eosinophilic cytoplasm and round to oval nuclei. There is no evidence of necrosis or mitotic activity. The mass is surrounded by a thin layer of fibrous tissue.\n\nPathologic interpretation: The findings are consistent with a benign fibroepithelial tumor, specifically a fibroepithelial polyp. This is a common benign tumor of the skin and subcutaneous tissue, and is typically asymptomatic. Treatment is usually surgical excision, and the prognosis is excellent.",
+        "gts": "Microscopic findings: Spindle B melanoma cells are present.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.033613445377868804,
+        "BLEU4": 4.526414192373226e-10,
+        "ROUGE": 0.07292289300657502,
+        "METEOR": 0.18382352941176472,
+        "CIDEr-R": 4.953802728633351e-71
+    },
+    {
+        "idx": 6,
+        "id": "S321-25597_29",
+        "image": "spindle cell type (arrow).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a well-demarcated, solid, and nodular lesion with a central area of necrosis. The cells are polygonal, with abundant eosinophilic cytoplasm and prominent nucleoli. The nuclei are large, irregular, and pleomorphic. There is a marked nuclear atypia and mitotic activity. The stroma is scant and shows no evidence of inflammation or vasculitis. The lesion is likely to be a malignant neoplasm, most likely a sarcoma or a carcinoma. Further molecular testing and immunohistochemistry may be required to determine the exact diagnosis and subtype.",
+        "gts": "Microscopic findings: Spindle melanoma cells are present.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.045977011493724414,
+        "BLEU4": 6.220761023631379e-10,
+        "ROUGE": 0.09625246548323473,
+        "METEOR": 0.23437499999999997,
+        "CIDEr-R": 1.18165626603441e-36
+    },
+    {
+        "idx": 7,
+        "id": "S321-25597_20",
+        "image": "spoindle B cell type (arrow).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The biopsy specimen shows a well-demarcated, circumscribed, and encapsulated mass composed of spindle cells with a storiform pattern. The cells have moderate eosinophilic cytoplasm, elongated nuclei, and prominent nucleoli. There is a marked cellular atypia and mitotic activity is present. The mass is surrounded by a thin fibrous capsule. The surrounding stroma is edematous and shows mild chronic inflammatory infiltrate.\n\nPathologic interpretation: The findings are consistent with a diagnosis of malignant fibrous histiocytoma (MFH). MFH is a rare, aggressive soft tissue sarcoma that typically affects adults. It is characterized by a storiform pattern of spindle cells with moderate cellular atypia and mitotic activity. The presence of a thin fibrous capsule and edematous stroma is also consistent with MFH. Further molecular testing may be required to confirm the diagnosis and guide treatment.",
+        "gts": "Microscopic findings: Spindle B melanoma cells are present.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.037593984962123364,
+        "BLEU4": 3.596105680299015e-10,
+        "ROUGE": 0.06601731601731602,
+        "METEOR": 0.1916376306620209,
+        "CIDEr-R": 1.9113458585164968e-90
+    },
+    {
+        "idx": 8,
+        "id": "S321-25597_21",
+        "image": "tumor invades sclera (2).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a section of lung tissue with a central area of necrosis surrounded by a ring of granulation tissue. The granulation tissue is composed of a mixture of inflammatory cells, including macrophages, lymphocytes, and plasma cells, as well as fibroblasts and vascular endothelial cells. The central necrotic area is filled with a mixture of cellular debris and fibrin. The surrounding lung parenchyma appears normal, with well-defined alveoli and normal lung architecture. The bronchi and bronchioles are lined by ciliated epithelium and contain a mixture of inflammatory cells and mucus. The overall appearance is consistent with a case of acute bronchopneumonia.",
+        "gts": "Microscopic findings: Melanoma invades the sclera.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.019230769230584328,
+        "BLEU4": 3.6690993500430144e-10,
+        "ROUGE": 0.041723666210670314,
+        "METEOR": 0.15965665236051504,
+        "CIDEr-R": 0.0
+    },
+    {
+        "idx": 9,
+        "id": "S321-25597_32",
+        "image": "tumor invades sclera (circle).jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a section of lung tissue with a central area of necrosis surrounded by a ring of granulomatous inflammation. The granulomas are composed of epithelioid cells, lymphocytes, and occasional multinucleated giant cells. There is also evidence of fibrosis and fibroblastic proliferation in the surrounding tissue. The central necrotic area is filled with caseous material and contains numerous acid-fast bacilli, which are characteristic of Mycobacterium tuberculosis infection. The overall architecture of the lesion is consistent with a case of pulmonary tuberculosis.",
+        "gts": "Microscopic findings: Melanoma invades the sclera.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.03571428571386055,
+        "BLEU4": 5.04505902023777e-10,
+        "ROUGE": 0.07549504950495049,
+        "METEOR": 0.17714285714285719,
+        "CIDEr-R": 8.521225344699248e-36
+    },
+    {
+        "idx": 10,
+        "id": "S321-25597_33",
+        "image": "tumor invades sclera.jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a section of a lymph node with a well-defined capsule and trabeculae. The paracortex is composed of a mixture of lymphocytes, plasma cells, and histiocytes. The germinal centers are present and appear to be active. The cortex is composed of a mixture of lymphocytes, plasma cells, and histiocytes. The medulla is composed of a mixture of lymphocytes, plasma cells, and histiocytes. The lymph node architecture is preserved, and there is no evidence of necrosis or inflammation. The cellular morphology is consistent with reactive lymphoid hyperplasia. The pathologic interpretation is consistent with reactive lymphoid hyperplasia.",
+        "gts": "Microscopic findings: Melanoma invades the sclera.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.020202020201816148,
+        "BLEU4": 3.8572824341306016e-10,
+        "ROUGE": 0.043586995355484104,
+        "METEOR": 0.18378831417624522,
+        "CIDEr-R": 0.0
+    },
+    {
+        "idx": 11,
+        "id": "S321-25597_34",
+        "image": "vitreous seeding of tumor cells.jpg",
+        "model": "../checkpoints/proj_ho82b.pt",
+        "res": "Microscopic findings: The image shows a section of lung tissue with a central area of necrosis surrounded by a ring of granulation tissue. The granulation tissue is composed of a mixture of inflammatory cells, including macrophages, lymphocytes, and plasma cells. There is also evidence of fibroblastic proliferation and new blood vessel formation. The central necrotic area is filled with debris and contains a few neutrophils. The surrounding lung parenchyma appears normal, with intact alveolar walls and normal-appearing epithelial cells. Based on these findings, the most likely pathologic interpretation is that of a chronic granulomatous inflammation, possibly due to a fungal infection such as histoplasmosis or coccidioidomycosis. Further molecular testing may be necessary to confirm the diagnosis.",
+        "gts": "Microscopic findings: Pigmented melanoma cells are present in the vitreous, consistent with vitreous seeding.\nPathological diagnosis: Choroidal melanoma",
+        "BLEU1": 0.0344827586203924,
+        "BLEU4": 3.905981812369527e-10,
+        "ROUGE": 0.05210706150341685,
+        "METEOR": 0.1676829268292683,
+        "CIDEr-R": 2.61964775126059e-60
+    }
 ]

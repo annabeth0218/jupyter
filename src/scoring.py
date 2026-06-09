@@ -18,8 +18,8 @@ produced by eval.py.  The file format is:
 
 Usage:
     python ../src/scoring.py \
-        --input  ../outputs/qwen2.5-vl-7b.json \
-        --output ../outputs/qwen2.5-vl-7b_score.json
+        --input  ../outputs/ho82b/S321.json \
+        --output ../outputs/ho82b/S321.json
 """
 
 import argparse
