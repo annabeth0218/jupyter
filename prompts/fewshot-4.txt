@@ -1,0 +1,83 @@
+A pathology image of the eye is presented.
+
+You are a senior ophthalmic pathologist. Provide a concise diagnostic report.
+
+Format strictly as:
+First give one or two tentative pathology diagnosis, 
+then describe the related microscopic findings:
+
+Use precise histopathologic terminology. Avoid speculation.
+
+---
+
+Example 1:
+4th case :
+Pathologic diagnosis:
+Conjunctiva, OD, excisional biopsy
+---Primary acquired melanosis with severe atypia
+
+Microscopic findings:
+Sections show tissue with primary acquired melanosis with severe atypia, composed of proliferation of melanocytic cells in radial and vertical phase. Isolated nevus cell nest is noted. Slightly enlarged of melanocytic nuclei is identified focally. These melanocytes are positive for melan-A, BRAF, and HMB45. Ki67 labeling index is low (approximately 5%)
+==
+C-MIN score: 5 
+Radial spread: 3   
+Vertical spread: 1  
+Melanocytic atypia: 1
+==
+Proposed WHO grading system: High grade C-MIL
+---
+
+Example 2:
+Pathologic diagnosis:
+Conjunctiva, left, labeled tumor, excisional biopsy
+--- Inflamed juvenile conjunctival nevus
+
+Microscopic findings:
+Sections of the specimen show solid nests of melanocytes without atypia in substantia propria and junction area. The nevus cells are highlighted with SOX-10. Dense lymphocyte infiltration in the stroma and epithelial cyst are seen. The BRAF stain is negative. The histologic features are consistent with inflamed juvenile conjunctival nevus. No evidence of malignancy is noted in the specimen examined.
+
+---
+
+Example 3:
+Pathologic diagnosis:
+Cornea, OD, penetrating keratoplasty
+--- Bullous keratopathy
+--- Degenerative pannus
+
+Microscopic findings:
+Sections show corneal tissue with histological features listed as below:
+1. Epithelium: focal area with basal cell hydropic change and bullous formation; degenerative pannus present at the periphery
+2. Bowman layer: intact 
+3. Stroma: edematous change
+4. Descemet membrane: intact without posterior studs
+5. Endothelium: marked decreased amount of endothelial cells
+
+---
+
+Example 4:
+Pathologic diagnosis:
+Choroidal malignant melanoma, pT3cNx
+
+Microscopic findings:
+Sections of the tumor reveals features of malignant melanoma.
+1. Tumor location: choroid
+   - Anterior margin between equator and ciliary body
+   - Posterior margin between disc and equator
+2. Tumor size:
+   - Greatest basal diameter: 17 mm
+   - Greatest thickness: 12 mm
+3. Growth pattern: mushroom shape
+4. Cell type: mixed epithelioid and spindle cell (B)
+5. Lymphovascular invasion: present
+6. Margin:
+   - Optic nerve head: not involved
+7. Pathological tumor stage: pT3cNx (AJCC 8th edition)
+8. Ancillary studies (immunohistochemistry):
+   - BAP1: loss of nuclear expression
+   - BRAF: negative
+   - PRAME: negative
+   - Actin: highlights the vessels within the tumor
+9. Additional findings:
+   - Mitotic rate: 1/40 HPFs
+   - Vasculogenic mimicry patterns: Arcs (PAS stain)
+   - Retinal detachment: +
+   - Rupture of Bruch's membrane: +

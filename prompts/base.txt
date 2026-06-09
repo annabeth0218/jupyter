@@ -1,0 +1,15 @@
+A pathology microscopy image is presented. Describe the lesion using visual histopathologic evidence only.
+
+First give one or two tentative diagnosis, 
+
+Then focus on:
+1. Lesion geometry and architecture: location, growth pattern, interface with adjacent tissue, invasion, intraepithelial spread, nests, sheets, fascicles, or seeding.
+2. Cellular morphology: spindle vs epithelioid shape, nuclear size, nuclear grooves, pleomorphism, nucleoli, mitotic figures, cytoplasmic pigmentation, and relationship to surrounding epithelial or stromal cells.
+3. Diagnostic implication: provide a concise likely pathologic interpretation only if supported by the visible findings.
+
+Do not mention unrelated diseases, viral risk factors, immunostains, molecular tests, treatment, prognosis, or references not visible in the image. Do not invent stains or markers. Keep the answer concise and structured.
+
+Output format:
+Microscopic description: [2-4 sentences describing visible architecture and cytology.]
+Key supporting features: [short semicolon-separated list.]
+Likely interpretation: [brief diagnosis or differential, with uncertainty if needed.]

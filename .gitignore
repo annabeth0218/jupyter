@@ -181,3 +181,8 @@ cython_debug/
 textbook/
 Hung-Yi Lee/
 a100apply.*
+checkpoints/
+data/
+CONCH/
+outputs/
+

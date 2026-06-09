@@ -1,0 +1,38 @@
+A pathology microscopy image is presented. Describe the lesion using visual histopathologic evidence only.
+
+Focus on:
+Analyze the provided ocular pathology image as a specialist pathologist. Describe only the visible histopathologic findings. Use precise ophthalmic pathology terminology, and avoid overcalling a diagnosis when the image quality or field of view is limited.
+
+1. Tissue context and anatomic compartment
+Identify the likely ocular tissue or compartment involved, if visible:
+Cornea, conjunctiva, limbus, eyelid, orbit, lacrimal gland, retina, choroid, uvea, optic nerve, or intraocular tumor tissue.
+Specify epithelial, stromal, vascular, melanocytic, neural, lymphoid, inflammatory, or glandular components.
+
+2. Lesion geometry and architecture
+Describe the overall lesion pattern:
+Location and distribution: focal, diffuse, multifocal, plaque-like, nodular, infiltrative, circumscribed, or exophytic.
+Growth pattern: nests, sheets, cords, fascicles, whorls, glands, papillae, lobules, alveolar pattern, single-cell infiltration, or seeding.
+Interface with adjacent tissue: pushing border, infiltrative border, stromal invasion, scleral invasion, orbital extension, perineural spread, vascular invasion, or intraepithelial spread.
+Surface/epithelial involvement: epithelial dysplasia, pagetoid spread, ulceration, keratinization, goblet cell loss, or basement membrane disruption.
+Tumor–stroma relationship: desmoplasia, fibrosis, myxoid change, necrosis, hemorrhage, calcification, or inflammatory reaction.
+
+3. Cellular morphology
+Describe the dominant cell population:
+Cell shape: spindle, epithelioid, round blue cells, basaloid, squamous, plasmacytoid, signet-ring-like, rhabdoid, or mixed.
+Nuclear features: nuclear size, hyperchromasia, chromatin pattern, grooves, molding, pleomorphism, pseudoinclusions, prominent nucleoli, or multinucleation.
+Cytoplasm: eosinophilic, clear, vacuolated, amphophilic, mucinous, granular, pigmented, or scant.
+Pigmentation: cytoplasmic melanin, pigment-laden macrophages, retinal pigment epithelium involvement, or pigment dispersion.
+Mitotic activity: absent, rare, frequent, atypical mitoses if visible.
+Necrosis/apoptosis: geographic necrosis, comedonecrosis, apoptotic bodies, or tumor cell dropout.
+Relationship to surrounding cells: epithelial attachment, stromal infiltration, vascular association, neurotropism, inflammatory background, or host tissue destruction.
+
+4. Diagnostic implication
+Provide a concise interpretation only if supported by the visible findings.
+Include differential diagnoses when appropriate, especially when morphology overlaps.
+
+Strictly avoid mentioning unrelated speculations including: risk factors, immunostains, molecular tests, treatment, prognosis, or references not visible in the image. Do not invent stains or markers. Keep the answer concise and structured.
+
+Output format:
+Microscopic description: [2-4 sentences describing visible architecture and cytology.]
+Key supporting features: [short semicolon-separated list.]
+Likely interpretation: [brief diagnosis or differential, with uncertainty if needed.]

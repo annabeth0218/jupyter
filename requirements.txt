@@ -1,0 +1,17 @@
+torch
+transformers
+pillow
+tqdm
+accelerate
+safetensors
+sentencepiece
+protobuf
+# --------
+# optional
+bitsandbytes
+pydicom
+numpy
+openslide-python
+google-genai
+pycocoevalcap
+nltk
