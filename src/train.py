@@ -15,7 +15,6 @@ from torch.utils.data import DataLoader, Dataset, Subset
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
-
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
@@ -25,15 +24,14 @@ CACHE_PT = f"{os.path.expandvars(STAGE_DIR)}/cache_0503.pt"
 PROMPT_FILE = Path(os.environ.get("PROMPT_FILE", "../prompts/base.txt"))
 PROMPT = PROMPT_FILE.read_text(encoding="utf-8")
 
-
-LLM_ID = "Qwen/Qwen2-7B-Instruct"
+LLM_ID = "Qwen/Qwen2.5-7B"
 V_TOKENS = 32              
 LR = 1e-4                  
 BSZ = 8
 EPOCHS = 8
 MAX_TXT_TOK = 96
 FP16 = False
-WEIGHT_DECAY = 0.05      
+WEIGHT_DECAY = 0      
 DROPOUT      = 0       
 WARMUP_STEPS = 20 
 
@@ -159,6 +157,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 H = model.config.hidden_size
 print("Hidden size:", H)
+
 
 # Freeze the LLM; only the projector trains.
 for p in model.parameters():
