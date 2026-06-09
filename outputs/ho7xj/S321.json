@@ -1,0 +1,98 @@
+[
+  {
+    "idx": 0,
+    "id": "S321-25597_23",
+    "image": "epithelioid cell type and prominent nucleoli (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "A biopsy sample reveals a poorly differentiated neoplasm composed of irregularly shaped, pleomorphic cells. The tumor cells exhibit high nuclear-to-cytoplasmic ratio, with prominent nucleoli and irregular chromatin patterns. Mitotic figures are numerous, indicating high cell proliferation rate. Necrosis is present in some areas. The stroma is infiltrated by the tumor cells, and there is evidence of lymphocytic infiltration around the neoplastic cells.\n\nPathologic interpretation:\nThe observed features suggest a poorly differentiated malignancy, likely a type of sarcoma or carcinoma, given the atypical cellular morphology and high mitotic activity. The lack of differentiation and extensive necrosis are characteristic of aggressive tumors. The presence of lymphocytic infiltration may indicate an inflammatory response to the neoplasm or suggest a potential for immunotherapy sensitivity. Further diagnostic evaluation, such as immunohistochemistry, could help narrow down the specific subtype of the malignancy. However, based on the current description, the most likely",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Epithelioid melanoma cells with prominent nucleoli are present."
+  },
+  {
+    "idx": 1,
+    "id": "S321-25597_24",
+    "image": "low power shows a tumor in the subretinal area.jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The image depicts a tissue sample with a nodular pattern of neoplastic cells. These cells are arranged in a lobular configuration, resembling a honeycomb structure. They exhibit a high degree of atypia, with irregular nuclei and prominent nucleoli. Mitotic figures are abundant, indicating rapid cell division. The background stroma is infiltrated by these neoplastic cells, disrupting the normal architecture.\n\nCellular morphology: The neoplastic cells show pleomorphism, with varying sizes and shapes. Nuclei are often enlarged, irregularly shaped, and hyperchromatic. Some nuclei may contain multiple nucleoli. The cytoplasm appears eosinophilic, with a granular or vacuolated appearance.\n\nPathologic interpretation: Based on the architectural pattern, cellular morphology, and atypia, this is consistent with a diagnosis of a malignant neoplasm, such as a poorly differentiated carcinoma or a lymphoma. The nodular pattern suggests a potential for metastasis. Further immun",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Low power view shows an intraocular melanoma mass involving the posterior choroid/subretinal region."
+  },
+  {
+    "idx": 2,
+    "id": "S321-25597_25",
+    "image": "mitotic figure (arrow) (2).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "A biopsy sample reveals a poorly differentiated neoplasm composed of irregularly shaped, pleomorphic cells. The tumor cells exhibit high nuclear-to-cytoplasmic ratio, with prominent nucleoli and irregular chromatin patterns. Mitotic figures are numerous, indicating high cell proliferation rate. There is evidence of necrosis within the tumor mass. The stroma appears disrupted and infiltrated by the neoplastic cells.\n\nLesion architecture: The lesion is characterized by a diffuse pattern with no clear boundaries between the neoplastic cells and surrounding tissue. The neoplastic cells are loosely arranged without any discernible architectural organization.\n\nCellular morphology: The neoplastic cells show marked atypia, with irregular nuclei, prominent nucleoli, and irregular chromatin distribution. The cytoplasm is variably abundant or scant, depending on the individual cell. Necrotic debris is present within the tumor, indicating areas of cell death.\n\nPathologic interpretation: Based on these findings, the lesion is consistent with a",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 3,
+    "id": "S321-25597_26",
+    "image": "mitotic figure (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "A tissue sample is examined under the microscope. The architecture of the lesion appears irregular, with a diffuse pattern lacking clear boundaries. The cellular component shows a mix of cell types, including lymphocytes, plasma cells, and scattered epithelial cells. There is no evidence of necrosis or significant fibrosis.\n\nCellular morphology: Lymphocytes are present in abundance, often seen in clusters or sheets, with a predominant T-cell population based on their typical morphology. Plasma cells are also evident, characterized by their large, vacuolated cytoplasm and basophilic granules. Some epithelial cells are observed, suggesting a possible reactive or neoplastic origin.\n\nPathologic interpretation: Based on these findings, the lesion likely represents a chronic inflammatory process, possibly involving an immune response to a local infection or autoimmune condition. The presence of lymphocytes and plasma cells suggests an immunological component, while the epithelial cells may indicate a reactive change or a potential neoplasm of epithelial origin. Further diagnostic",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 4,
+    "id": "S321-25597_27",
+    "image": "spindle A cell type has nuclear grooving (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The image displays a tissue section with a well-defined lesion. The lesion is characterized by a dense infiltration of inflammatory cells, predominantly lymphocytes and plasma cells, within a background of necrotic debris. There is evidence of hemorrhage and fibrin deposition, suggesting an acute inflammatory process. The architecture of the lesion appears to be non-specific, with no clear delineation between the infiltrating cells and the surrounding tissue. The cellular morphology shows a mix of mature lymphocytes and plasma cells, with some exhibiting atypia, which may indicate ongoing or recent proliferation. The presence of multinucleated giant cells further supports an inflammatory etiology. Based on these findings, the likely pathologic interpretation is an acute inflammatory response, possibly due to infection or an immune-mediated process.\n\nPlease note that this description is based solely on visual inspection and does not include any molecular testing, treatment recommendations, or prognosis assessment. The specific cause of the inflammation cannot be determined without additional information or tests.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle A melanoma cells with nuclear grooves are present."
+  },
+  {
+    "idx": 5,
+    "id": "S321-25597_28",
+    "image": "spindle B cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The image displays a tissue section with a well-defined lesion. The lesion is characterized by a dense infiltrate of inflammatory cells, predominantly lymphocytes and plasma cells, scattered throughout the tissue. There is no evidence of necrosis or significant fibrosis within the lesion. The surrounding stroma appears intact, with no notable distortion or edema.\n\nCellular morphology: Lymphocytes are present in abundance, exhibiting a uniform, round to slightly irregular shape with indistinct nuclear membranes. They show a moderate amount of cytoplasm, which is pale and eosinophilic. Plasma cells are also evident, having a larger, more basophilic cytoplasm with abundant, finely granular eosinophilic cytoplasmic material. These cells often have a single, prominent nucleolus and may be seen in clusters or dispersed throughout the tissue.\n\nPathologic interpretation: Based on these findings, the lesion is consistent with an acute or chronic inflammatory response. The predominance of lymphocytes and plasma cells",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 6,
+    "id": "S321-25597_29",
+    "image": "spindle cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The image displays a tissue section with a well-defined, irregularly shaped lesion. The lesion is composed of a mixture of inflammatory cells, including lymphocytes, plasma cells, and histiocytes, which are scattered throughout the tissue. There is also evidence of fibrosis and areas of necrosis within the lesion. The cellular components show a reactive pattern, suggesting an immune response to a pathogen or foreign material.\n\nPathologic interpretation: This finding is consistent with a chronic inflammatory process, likely representing a granulomatous reaction. The presence of caseating necrosis suggests that the inflammation has been ongoing for a prolonged period, possibly indicative of tuberculosis or other granulomatous diseases. Further diagnostic tests, such as acid-fast staining or specific serological assays, would be required to confirm the etiology and guide appropriate treatment. The lesion's architecture, with its mixed inflammatory cell infiltrate and fibrotic changes, supports a diagnosis of a chronic granulomatous disease, but definitive identification requires additional information",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle melanoma cells are present."
+  },
+  {
+    "idx": 7,
+    "id": "S321-25597_20",
+    "image": "spoindle B cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The image displays a tissue section with a well-defined, irregularly shaped lesion. The lesion is composed of a mixture of inflammatory cells, including lymphocytes, plasma cells, and histiocytes, which are scattered throughout the tissue. There is also evidence of fibrosis, with collagen fibers forming a dense network within the lesion. The surrounding stroma appears to be relatively normal, with no significant architectural distortion or atypia.\n\nCellular morphology: Lymphocytes are present in varying sizes, ranging from small to large, and exhibit a range of nuclear shapes and chromatin patterns. Plasma cells are abundant, with their characteristic round nuclei and abundant cytoplasm filled with granules. Histiocytes show a variety of morphologies, including those with abundant cytoplasm and smaller ones with less cytoplasmic content. Some cells may have pseudo-inclusion bodies, which can be seen as dark-staining intracytoplasmic structures.\n\nPathologic interpretation: Based on these findings, the lesion likely",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 8,
+    "id": "S321-25597_21",
+    "image": "tumor invades sclera (2).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The tissue sample displays a complex lesion with irregular borders. The architecture is characterized by a mixture of inflammatory cells, including lymphocytes and plasma cells, scattered throughout the tissue. There are also areas of fibrosis and collagen deposition. The cellular morphology shows a predominance of atypical lymphoid cells, which are larger in size with abundant cytoplasm and irregular nuclei. These atypical cells exhibit pleomorphism and have a high mitotic rate, indicating significant cell proliferation. Additionally, there are occasional apoptotic bodies present.\n\nPathologic interpretation: Based on these findings, the lesion appears to be a reactive process with a strong inflammatory component, likely involving an immune response. The presence of atypical lymphoid cells suggests a neoplastic process, possibly representing a lymphoma or a reactive lymphoid hyperplasia with atypical features. Further immunohistochemical staining would be necessary to differentiate between these possibilities and to identify any specific markers that could guide the diagnosis. The high mitotic rate and atyp",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 9,
+    "id": "S321-25597_32",
+    "image": "tumor invades sclera (circle).jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The image displays a tissue section with a well-defined, irregularly shaped lesion. The lesion is composed of a mixture of inflammatory cells, including lymphocytes, plasma cells, and histiocytes, which are scattered throughout the tissue. There is also evidence of fibrosis and areas of necrosis within the lesion. The cellular components exhibit a diffuse pattern of infiltration, suggesting a chronic inflammatory process. The architecture of the lesion appears to be disrupted, with disorganized tissue structure and potential loss of normal tissue boundaries.\n\nPathologic interpretation: Based on these findings, the lesion likely represents an inflammatory response, possibly indicative of an infectious process or an autoimmune condition. The presence of lymphocytes, plasma cells, and histiocytes suggests an immune-mediated reaction, while the fibrosis and necrosis indicate ongoing tissue damage and repair processes. Further context would be needed to determine the specific etiology, such as the presence of microorganisms or characteristic features of known inflammatory diseases. This could potentially be associated with conditions like granul",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 10,
+    "id": "S321-25597_33",
+    "image": "tumor invades sclera.jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The tissue sample displays a nodular architecture with areas of hemorrhage and necrosis. There is evidence of chronic inflammation, characterized by the presence of lymphocytes, plasma cells, and histiocytes. The nodules are composed of fibrous tissue with varying degrees of collagen deposition. Within these nodules, there are foci of granulomatous inflammation, suggesting a possible infectious etiology or granulomatous disease. Additionally, there is a mixed inflammatory infiltrate containing neutrophils, eosinophils, and macrophages, indicative of an acute inflammatory response. The overall pattern suggests a chronic inflammatory process with potential for infectious or granulomatous etiology.\n\nPathologic interpretation:\nThe observed nodular architecture with hemorrhage, necrosis, chronic inflammation, granulomas, and a mixed inflammatory infiltrate points to a chronic inflammatory condition. The presence of granulomas and the mixed inflammatory cell population, including lymphocytes, plasma cells, histiocytes, neutrophils,",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 11,
+    "id": "S321-25597_34",
+    "image": "vitreous seeding of tumor cells.jpg",
+    "model": "../checkpoints/proj_ho7xj.pt",
+    "caption": "The image displays a tissue section with a well-defined lesion. The lesion is characterized by a dense infiltrate of inflammatory cells, predominantly lymphocytes and plasma cells, scattered throughout the tissue. There is no evidence of necrosis or hemorrhage within the lesion. The surrounding stroma appears intact, with no significant distortion or edema.\n\nCellular morphology: Lymphocytes are present in abundance, exhibiting a uniform, round to slightly irregular shape with indistinct nuclear membranes. They show a moderate amount of cytoplasm, which is pale and eosinophilic. Plasma cells are also evident, having a larger, more basophilic cytoplasm with abundant, finely granular eosinophilic cytoplasmic material. These cells often have a single, prominent nucleolus.\n\nPathologic interpretation: Based on these findings, the lesion is consistent with an acute inflammatory response, likely due to an infectious process. The predominance of lymphocytes and plasma cells suggests an immune-mediated reaction, possibly",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Pigmented melanoma cells are present in the vitreous, consistent with vitreous seeding."
+  }
+]

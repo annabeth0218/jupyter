@@ -1,0 +1,98 @@
+[
+  {
+    "idx": 0,
+    "id": "S321-25597_23",
+    "image": "epithelioid cell type and prominent nucleoli (arrow).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The image depicts a well-demarcated, irregularly shaped lesion with a mixed architecture.ing figures and cytoplasmic pigmentation. Key supporting features: Pleomorphic nuclei; cells; nucleoli; mitotic activity;;; spindle and epithelioid morphology; invasion into the underlying stroma. Likely interpretation: Invasive melanoma; differential includes poorly differentiated carcinoma. Microscopic description: The image depicts a well-demarcated, irregularly shaped lesion with a mixed architecture and cytoplasmic pigmentation.ing figures and cytoplasmic pigmentation. Key supporting features: Pleomorphic nuclei; cells; nucleoli; mitotic activity; cells; nucleoli; mitotic activity; spindle and epithelioid morphology; cells; cells; cells invasion into the underlying stroma.ing figures. Likely interpretation: Invasive melanoma; cells;;; cells; cells differential includes poorly differentiated carcinoma. cells. cells.席梦思",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Epithelioid melanoma cells with prominent nucleoli are present."
+  },
+  {
+    "idx": 1,
+    "id": "S321-25597_24",
+    "image": "low power shows a tumor in the subretinal area.jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The image shows a well-demarcated, nodular lesion with a central area of necrosis. The tumor cells are arranged in sheets and fascicles, with some areas showing a pseudo-palisading pattern around the necrotic core. The nuclei are large, hyperchromatic, and show prominent nucleoli. There is no significant invasion into adjacent tissue.\nKey supporting features: Sheets and fascicles; large hyperchromatic nuclei; prominent nucleoli; central necrosis.\nLikely interpretation: Squamous cell carcinoma; differential includes sarcoma and lymphoma. Microscopic description: The image displays a lesion with a mixed architecture, predominantly composed of spindle-shaped cells arranged in fascicles and nests. There is a central area of hemorrhage and necrosis. The cells have elongated nuclei with irregular shapes, prominent nucleoli, and scant cytoplasm. There is minimal invasion into the surrounding stroma.\nKey supporting features: Spindle-shaped cells; fascicles and nests; irregular",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Low power view shows an intraocular melanoma mass involving the posterior choroid/subretinal region."
+  },
+  {
+    "idx": 2,
+    "id": "S321-25597_25",
+    "image": "mitotic figure (arrow) (2).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The lesion is a well-demarcated, irregularly shaped area with a mixed architecture of sheets and nests of atypical cells. The cells are predominantly epithelioid in shape, with moderate to abundant eosinophilic cytoplasm. There is a marked nuclear pleomorphism with prominent nucleoli and frequent mitotic figures. The atypical cells show a close relationship with the surrounding normal squamous epithelium, invading its borders.\n\nKey supporting features: Sheets; Nests; Atypical epithelioid cells; Nuclear pleomorphism; Prominent nucleoli; Frequent mitotic figures;1; Close relationship with normal squamous epithelium\n\nLikely interpretation: Squamous cell carcinoma in situ with invasive component; differential includes basal cell carcinoma. (uncertain based on limited information). Microscopic description: The lesion is a well-demarcated, irregularly shaped area with a mixed architecture of sheets and nests of atypical cells. cells. cellsanywhere.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 3,
+    "id": "S321-25597_26",
+    "image": "mitotic figure (arrow).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The image shows a well-demarcated, irregularly shaped lesion with a mixed architecture. nests and sheets of atypical cells infiltrating the epidermis and dermis. in a non-predominantly linear pattern..幸亏您没有提供实际的病理切片图像，因此我将基于假设的情景来构建一个示例描述。请注意，以下内容是虚构的，并不反映任何真实的病例。\n\nMicroscopic description: The image displays a well-defined, irregularly shaped lesion composed of a mixture of atypical cells forming nests and sheets. These cells are predominantly epithelioid in shape, with some spindle-shaped variants. cells. cells. nuclei exhibiting mild to moderate pleomorphism and occasional nuclear grooves.. nuclei showing prominent nucleoli. mitotic figures are observed within the nests and sheets. cytoplasmic pigmentation is not evident.\n\n席位描述：该图像显示了一个边界清晰、形状不规则的病变，，组成混合",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 4,
+    "id": "S321-25597_27",
+    "image": "spindle A cell type has nuclear grooving (arrow).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The image depicts a well-demarcated, irregularly shaped lesion with a mixed architecture.ing pattern. nests and sheets of atypical cells. The cells exhibit a predominantly spindle-shaped morphology with elongated nuclei and prominent nucleoli. Key supporting features: Spindle shape; Prominent nucleoli; Irregular architecture; Nests and sheets.\n\nLikely interpretation: Atypical proliferative lesion; differential includes benign fibrous histiocytoma, dermatofibrosarcoma protuberans, or a low-grade sarcoma.;; \nMicroscopic description: The image shows a well-defined, irregularly shaped lesion composed of a mixture of spindle cells and epithelioid cells arranged in nests and sheets. Key supporting features: Spindle and epithelioid cells;s;;;;;;;席梦思床垫是否适合孕妇使用？\n\n席梦思床垫是一种常见的弹簧床垫，制作的材料和设计可能对孕妇来说是合适的。sicleFull handjob",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle A melanoma cells with nuclear grooves are present."
+  },
+  {
+    "idx": 5,
+    "id": "S321-25597_28",
+    "image": "spindle B cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The lesion is composed of a dense, irregularly shaped mass with a mixed architecture. nests and席梦思床上用品\n\n and sheets of spindle cells. nuclei exhibiting prominent grooves, pleomorphism, and frequent mitotic figures.席梦思床上用品\n\nKey supporting features: spindle cell morphology; nuclear grooves; pleomorphism; frequent mitotic figures; nests and sheets arrangement.\n\nLikely interpretation: Sarcoma; specifically, a spindle cell sarcoma or a malignant fibrous histiocytoma cannot be ruled out without further diagnostic testing.席梦思床上用品\nMicroscopic description: The lesion is composed of a dense, nests and sheets of spindle cells with prominent nuclear grooves and marked pleomorphism. nuclei. nuclei exhibiting frequent mit mitotic figures. and occasional cytoplasmic pigmentation.. nuclei. nuclei showing a close relationship to the surrounding epithelial cells.\n\nKey supporting features: spindle cell morphology; nuclear grooves; pleomorphism;",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 6,
+    "id": "S321-25597_29",
+    "image": "spindle cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The image depicts a well-demarcated, irregularly shaped lesion with a mixed architecture.ing pattern. nests and sheets of atypical cells infiltrating the dermis.zation.ing from the epidermis.zation. The cells are predominantly epithelioid in shape with mild to moderate pleomorphism, prominent nucleoli, and scant cytoplasm. There is no significant mitotic activity observed; and the cells show a close relationship with the surrounding collagenous stroma.\n\nKey supporting features:席梦思;zation;;;;;;; createState:; epithelioid morphology; pleomorphism; nucleoli;; nuclei; pleomorphism; nucleoli scant cytoplasm; mitotic figures;\n\n pleomorphic cells size;zation: Likely interpretation: Atypical nevus or melanoma in situ;;;icles or seeding;zation:\n\n\nules or seeding:;zation;zation;zation:",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle melanoma cells are present."
+  },
+  {
+    "idx": 7,
+    "id": "S321-25597_20",
+    "image": "spoindle B cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The image shows a well-demarcated, irregularly shaped lesion with a mixed architecture. nests and sheets of spindle-shaped cells.., predominantly located in the dermis.. and extending into the subcutaneous fat.. Proliferating cells have a moderate to high nuclear-to-cytoplasmic ratio, with prominent nucleoli and occasional mitotic figures. There is no significant invasion into the overlying epidermis or adjacent structures; however, there is a clear interface between the lesion and surrounding normal tissue.\n\n Key supporting features: Spindle cell morphology; prominent nucleoli; mitotic figures; well-defined borders; non-invasive growth pattern.\nLikely interpretation: Non-invasive spindle cell neoplasm (e.g., dermatofibrosarcoma protuberans);席梦思床上能放书吗？\n\n从字面上看，席梦思（是床的一种品牌名，,床铺上通常不建议放置书籍。。 书籍",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 8,
+    "id": "S321-25597_21",
+    "image": "tumor invades sclera (2).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The lesion is composed of a well-demarcated, irregularly shaped area with a mixed pattern of spindle and epithelioid cells.. cellular morphology..\n\n.\n The nuclei are variably sized with prominent nucleoli and occasional mitotic figures. The cells show a close relationship to the surrounding stromal tissue, with some areas showing fascicular growth patterns.\n\nKey supporting features: Irregular geometry; mixed spindle and epithelioid cell morphology; variable nuclear size; prominent nucleoli; mitotic figures; close stromal relationship; fascicular growth pattern.\n\nany other relevant details.\n\nLikely interpretation: Undifferentiated sarcoma; with席梦思床单上的病变描述如下：\n\n席梦思床单上的病变描述如下，\n\n可能需要一些澄清,因为您提供的上下文似乎与病理学图像分析有关,卮言四达(2023)。)在实际的病理学图像分析中,应使用医学术语和具体的观察结果",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 9,
+    "id": "S321-25597_32",
+    "image": "tumor invades sclera (circle).jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The lesion is composed of a dense, irregularly shaped mass of spindle-shaped cells with a storiform pattern.. large areas of necrosis and hemorrhage. are present. in the center.. andanywhere from 1-30% of the field. The cells have hyperchromatic nuclei with prominent nucleoli and frequent mitotic figures. There is no clear interface with adjacent tissue, and the lesion appears to be growing in an infiltrative pattern. \n\nKey supporting features: Spindle cells, Storiform pattern; Necrosis; Hemorrhage; Mitotic figures\n\nLikely interpretation: Myxoid liposarcoma;; (with uncertainty due to lack of fat cells and immunohistochemical confirmation).))\n))\n)\n幸存的肿瘤细胞呈多形性，核仁明显,并伴有大量坏死和出血区域。。\n席 Microscopic description: The lesion is composed of a heterogeneous mixture of spindle and epithelioid cells",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 10,
+    "id": "S321-25597_33",
+    "image": "tumor invades sclera.jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "]\n\n\n\n\n\n)\n)\n)\n)\n)\n)\n)\n)\n)\n)\n)\n)\n)\n)\n)\n The lesion is seen most prominently as a superficial dermal plaque with a central ulcer.\n The borders are well-defined and the lesion is   The lesion is growing in an exophytic pattern; The lesion is invading the subepidermal tissue and the epidermis is showing signs of atrophy and acantholysis. The lesion is composed of spindle-shaped cells with席琳·迪翁的歌曲《我心依旧》传达了怎样的情感？\n\n  情感: 《我心依旧》这首歌主要表达了席琳·迪翁对过去美好时光的怀念和对未来的希望。 席琳·迪翁在歌词中通过描述与爱人分别后的思念, 感受以及对未来重逢的期盼来表达这种复杂的情感。 席琳·  createState:\n\n2-4 sentences describing visible architecture and cytology; Key supporting features: [",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 11,
+    "id": "S321-25597_34",
+    "image": "vitreous seeding of tumor cells.jpg",
+    "model": "../checkpoints/proj_ho7up.pt",
+    "caption": "Microscopic description: The lesion exhibits a well-defined, irregularly shaped mass with a nodular growth pattern. The tumor cells are predominantly epithelioid in shape, with round to oval nuclei that vary in size and show mild to moderate pleomorphism. Mitotic figures are present but not frequent. There is no significant cytoplasmic pigmentation noted.\n\nKey supporting features: Nodular; irregular geometry; epithelioid cells; variable nuclear size; mild to moderate pleomorphism; mitotic figures; no pigmentation.\n\nLikely interpretation: Adenocarcinoma or squamous cell carcinoma; differential includes other epithelial tumors. all uncertain without further details. any immunohistochemical stains. A. Microscopic description: The lesion shows a poorly defined, infiltrative growth pattern with a mixed architecture of solid sheets and small nests of neoplastic cells.1;2;3 Key supporting features: Infiltrative; mixed architecture; solid sheets; small nests; poorly defined",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Pigmented melanoma cells are present in the vitreous, consistent with vitreous seeding."
+  }
+]

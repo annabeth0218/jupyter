@@ -1,0 +1,98 @@
+[
+  {
+    "idx": 0,
+    "id": "S321-25597_23",
+    "image": "epithelioid cell type and prominent nucleoli (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "The tissue sample reveals a complex lesion with irregularly shaped, hyperchromatic nuclei and increased mitotic activity. There is evidence of nuclear pleomorphism, indicating significant variation in nuclear size and shape. The cells exhibit a high degree of atypia, suggesting abnormal cell growth and differentiation.\n\nLesion architecture: The lesion displays a diffuse pattern, with cells infiltrating the surrounding stroma in a non-organized manner. There are no clear boundaries between the affected and unaffected areas, indicating a lack of spatial organization within the lesion.\n\nCellular morphology: The cells show a variety of morphological features, including large, irregular nuclei with prominent nucleoli, and cytoplasmic vacuolization. Some cells may appear to have undergone necrosis, characterized by loss of cellular structure and fragmentation of the cell membrane.\n\nLikely pathologic interpretation: Based on the described findings, this lesion is consistent with a poorly differentiated neoplasm, such as an undifferentiated carcinoma or a sarcoma. The",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Epithelioid melanoma cells with prominent nucleoli are present."
+  },
+  {
+    "idx": 1,
+    "id": "S321-25597_24",
+    "image": "low power shows a tumor in the subretinal area.jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "\\- \n1. 1. 2. 3. 4 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46  47  48  49  50  51  52 53 54 55 56 57 58 59 60 61 62 63 64",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Low power view shows an intraocular melanoma mass involving the posterior choroid/subretinal region."
+  },
+  {
+    "idx": 2,
+    "id": "S321-25597_25",
+    "image": "mitotic figure (arrow) (2).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "The tissue sample reveals a complex lesion with irregularly shaped, hyperchromatic nuclei and prominent nucleoli. There is evidence of mitotic activity with atypical figures present. The cells exhibit pleomorphism, indicating significant variation in cell size and shape. The stroma appears disrupted, with areas of necrosis and hemorrhage evident. The lesion shows a diffuse pattern of growth, infiltrating the surrounding tissue without clear boundaries.\n\nHistological interpretation: This finding suggests a poorly differentiated neoplasm, likely representing a high-grade malignancy such as an undifferentiated carcinoma or a sarcoma. The presence of atypical mitoses, pleomorphism, and nuclear atypia are indicative of aggressive behavior. The lack of differentiation and the invasive nature of the tumor suggest a poor prognosis.\n\nFurther diagnostic steps would typically include immunohistochemistry to confirm the type of malignancy and to rule out other differential diagnoses. However, based on the described microscopic findings alone, the diagnosis leans towards a poorly differentiated malignancy",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 3,
+    "id": "S321-25597_26",
+    "image": "mitotic figure (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "The tissue sample reveals a complex lesion with irregularly shaped, hyperchromatic nuclei and prominent nucleoli. There is evidence of mitotic activity with atypical figures present. The cells exhibit pleomorphism, with some areas showing increased cellularity and others appearing relatively hypocellular. The stroma is infiltrated by the neoplastic cells, which display a high degree of nuclear atypia. The lesion shows a diffuse pattern of growth without clear boundaries.\n\n a) Lesion Architecture: The lesion architecture appears to be diffuse, characterized by a lack of clear boundaries between the neoplastic cells and the surrounding stroma. This suggests a poorly differentiated or undifferentiated type of malignancy, often indicative of aggressive behavior.\n\nb) Cellular Morphology: The cellular morphology is marked by a high degree of atypia. Cells are hyperchromatic with prominent nucleoli, indicating significant chromosomal instability. Pleomorphism is evident, with cells varying in size and shape. Mitotic activity is noted,",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 4,
+    "id": "S321-25597_27",
+    "image": "spindle A cell type has nuclear grooving (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "The tissue sample reveals a complex lesion with irregularly shaped, hyperchromatic nuclei and prominent nucleoli. There is evidence of mitotic activity with atypical figures present. The cells exhibit pleomorphism, indicating significant variation in size and shape. The stroma appears disrupted, with areas of necrosis and hemorrhage evident. The lesion shows a diffuse pattern of growth, infiltrating the surrounding tissue without clear boundaries.\n\nHistological interpretation: This finding is consistent with a poorly differentiated malignancy, such as an undifferentiated carcinoma or a sarcoma. The lack of specific differentiation and the presence of atypical features suggest a high-grade neoplasm. Further immunohistochemical staining may be required to confirm the exact type of malignancy and guide subsequent management decisions.\n\nPlease note that this description is based solely on the visual examination of the tissue sample and does not include any molecular testing results, treatment options, or prognosis. A definitive diagnosis requires comprehensive analysis by a pathologist.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle A melanoma cells with nuclear grooves are present."
+  },
+  {
+    "idx": 5,
+    "id": "S321-25597_28",
+    "image": "spindle B cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "in in a dog named a \"Golden Retriever\"\n and in in a dog named a \"Golden Retriever\"\n c in in in a dog named a \"Golden Retriever\"\n a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\"\n and\n a in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\" in in a dog named a \"Golden Retriever\"",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 6,
+    "id": "S321-25597_29",
+    "image": "spindle cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "The tissue sample reveals a complex lesion with irregularly shaped, hyperchromatic nuclei and increased mitotic activity. There is evidence of nuclear pleomorphism, indicating significant variation in nuclear size and shape. The cells exhibit a high degree of atypia, suggesting abnormal cell growth and differentiation.\n\n a) Lesion architecture: The lesion appears to be composed of irregularly shaped cells arranged in a disorganized pattern, indicative of a poorly differentiated neoplasm.\n\nousse a) 1) cellular morphology: The cells show features of dysplasia, including irregular nuclear shapes, increased nuclear chromatin density, and prominent nucleoli. The cytoplasm is often vacuolated or scant, with occasional signs of eosinophilic granules. The overall architecture suggests a diffuse pattern with no clear boundaries between regions.\n 2) likely pathologic interpretation: The findings are consistent with a diagnosis of malignancy, possibly representing a poorly differentiated carcinoma or sarcoma. Further evaluation through immunohistochemistry and molecular",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle melanoma cells are present."
+  },
+  {
+    "idx": 7,
+    "id": "S321-25597_20",
+    "image": "spoindle B cell type (arrow).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "The tissue sample reveals a complex lesion with irregularly shaped, hyperchromatic nuclei and prominent nucleoli. There is evidence of mitotic activity with atypical figures present. The cells exhibit pleomorphism, indicating significant variation in size and shape. The stroma appears reactive, with increased vascularity and fibrosis. The lesion shows a diffuse pattern of growth without clear boundaries.\n\nsuggesting a poorly differentiated neoplasm. The overall architecture suggests a malignancy, likely of epithelial origin, given the cellular morphology and nuclear characteristics. The pathologic interpretation leans towards a diagnosis of an undifferentiated carcinoma or a high-grade sarcoma, depending on additional immunohistochemical staining results that could differentiate between epithelial and mesenchymal components. Further evaluation would include specific markers for epithelial (e.g., CK, EMA) and mesenchymal (e.g., SMA, desmin) differentiation to refine the diagnosis. However, based solely on the provided microscopic findings, the most",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 8,
+    "id": "S321-25597_21",
+    "image": "tumor invades sclera (2).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "a lesion is evident in the field of view, characterized by irregularly shaped areas of necrosis. The borders of these lesions are ill-defined and appear to be confluent with surrounding tissue. Cellular morphology within the necrotic areas shows signs of coagulative necrosis, with a predominance of eosinophilic degeneration and mild lymphocytic infiltration. There is no evidence of hemorrhage or granulation within the necrotic regions. The overlying epidermis appears intact, with no signs of acanthosis or hyperkeratosis. Based on these findings, the lesion architecture suggests an acute inflammatory process leading to tissue death. The likely pathologic interpretation is that of an acute bacterial skin infection, possibly caused by a gram-positive organism, given the presence of eosinophilic degeneration. Further clinical context would be required for a definitive diagnosis.\n\n \\_ However, the patient presents a lesion with irregularly shaped necrotic areas, confluent borders, eosinophil",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 9,
+    "id": "S321-25597_32",
+    "image": "tumor invades sclera (circle).jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "in a sick animal,\n \\ mention molecular tests, or mention molecular tests, or prognosis. c mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or mention molecular tests, or",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 10,
+    "id": "S321-25597_33",
+    "image": "tumor invades sclera.jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "a lesion with irregularly shaped, ill-defined borders. The surface appears to have areas of hyperkeratosis, with thickened, flattened stratum of the epidermis. There are also areas of atrophic changes in the dermis, indicating loss of collagen and elastin fibers. The dermal papillae are elongated and irregularly distributed, suggesting a disruption in the normal architecture of the skin. The presence of inflammatory cells, including lymphocytes and plasma cells, within the lesion suggests an underlying immune response. The overall pattern is consistent with a diagnosis of psoriasis, specifically inverse psoriasis, which typically presents as a chronic, relapsing dermatitis affecting the flexural creases of the body, such as the axilla, groin, and elbows.ousse: \" the lesion is located on with a history of psoriasis, and the patient has a history of psoriasis. for the lesion is located on the skin, and shows a diffuse distribution with irregular borders..",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Melanoma invades the sclera."
+  },
+  {
+    "idx": 11,
+    "id": "S321-25597_34",
+    "image": "vitreous seeding of tumor cells.jpg",
+    "model": "../checkpoints/proj_ho7xx.pt",
+    "caption": "A\n The image is a 1) The scene is\n)",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: Pigmented melanoma cells are present in the vitreous, consistent with vitreous seeding."
+  }
+]

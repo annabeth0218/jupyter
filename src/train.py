@@ -26,15 +26,15 @@ PROMPT_FILE = Path(os.environ.get("PROMPT_FILE", "../prompts/base.txt"))
 PROMPT = PROMPT_FILE.read_text(encoding="utf-8")
 
 
-LLM_ID = "Qwen/Qwen2.5-VL-7B-Instruct" # meta-llama/Llama-3.1-8B-Instruct, Qwen/Qwen2-7B-Instruct
+LLM_ID = "Qwen/Qwen2-7B-Instruct" # meta-llama/Llama-3.1-8B-Instruct, Qwen/Qwen2-7B-Instruct
 V_TOKENS = 32              
 LR = 1e-4                  
-BSZ = 4
+BSZ = 8
 EPOCHS = 8
-MAX_TXT_TOK = 128
+MAX_TXT_TOK = 96
 FP16 = False
 WEIGHT_DECAY = 0.05      
-DROPOUT      = 0.1       
+DROPOUT      = 0       
 WARMUP_STEPS = 20 
 
 # Split / checkpoint locations
@@ -146,7 +146,7 @@ print(f"Cache: {N} samples, CONCH dim={D}")
 torch.cuda.empty_cache()
 dtype = torch.float16 if FP16 else torch.bfloat16
 
-tok = AutoTokenizer.from_pretrained(LLM_ID, use_fast=True)
+tok = AutoTokenizer.from_pretrained(LLM_ID, use_fast=True,trust_remote_code=True)
 if tok.pad_token_id is None:
     tok.pad_token_id = tok.eos_token_id
 
@@ -155,6 +155,7 @@ model = AutoModelForCausalLM.from_pretrained(
     dtype=dtype,
     #device_map="auto",
     device_map={"": 0},
+    trust_remote_code=True
 )
 H = model.config.hidden_size
 print("Hidden size:", H)
@@ -241,24 +242,40 @@ class PairSet(Dataset):
         target = build_target(self.cap[i], self.dis[i])
         text = self.prompt_tpl + target
 
-        enc = self.tok(
-            text,
-            max_length=self.max_len,
-            truncation=True,
-            padding=False,
+        prompt_enc = self.tok(
+            self.prompt_tpl,
+            add_special_tokens=False,
             return_tensors="pt",
         )
-
-        labels = enc.input_ids[0].clone()
-        cut = min(self.prompt_len, labels.numel())
-        labels[:cut] = -100  # mask the prompt out of the loss
+        target_enc = self.tok(
+            target,
+            max_length=self.max_len,   # MAX_TXT_TOK now only limits target
+            truncation=True,
+            padding=False,
+            add_special_tokens=False,
+            return_tensors="pt",
+        )
+    
+        input_ids = torch.cat([prompt_enc.input_ids[0], target_enc.input_ids[0]])
+        attn_mask = torch.ones(input_ids.size(0), dtype=torch.long)
+    
+        prompt_len = prompt_enc.input_ids[0].size(0)
+        labels = input_ids.clone()
+        labels[:prompt_len] = -100
+    
+        eos = self.tok.eos_token_id
+        if input_ids[-1].item() != eos:
+            eos_tensor = torch.tensor([eos], dtype=input_ids.dtype)
+            input_ids = torch.cat([input_ids, eos_tensor])
+            attn_mask = torch.cat([attn_mask, torch.ones(1, dtype=attn_mask.dtype)])
+            labels = torch.cat([labels, eos_tensor]) 
 
         return {
             "emb": self.embs[i],
-            "input_ids": enc.input_ids[0],
-            "attn_mask": enc.attention_mask[0],
+            "input_ids": input_ids,
+            "attn_mask": attn_mask,
             "labels": labels,
-            "prompt_len": cut,
+            "prompt_len": prompt_len,
         }
 
 
@@ -323,21 +340,25 @@ val = Subset(ds, val_idx)
 def collate(batch):
     emb = torch.stack([b["emb"] for b in batch])
     ids = [b["input_ids"] for b in batch]
+    labs = [b["labels"] for b in batch]
     lens = [len(x) for x in ids]
     maxL = max(lens)
     pad_id = tok.pad_token_id or tok.eos_token_id
-    ids_pad = torch.full((len(batch), maxL), pad_id, dtype=torch.long)
-    attn = torch.zeros((len(batch), maxL), dtype=torch.long)
-    prompt_lens = []
-    for i, (x, pl) in enumerate(zip(ids, [b["prompt_len"] for b in batch])):
-        ids_pad[i, : len(x)] = x
-        attn[i, : len(x)] = 1
-        prompt_lens.append(pl)
+
+    ids_pad  = torch.full((len(batch), maxL), pad_id, dtype=torch.long)
+    labs_pad = torch.full((len(batch), maxL), -100,   dtype=torch.long)  # pad labels with -100
+    attn     = torch.zeros((len(batch), maxL), dtype=torch.long)
+
+    for i, (x, l) in enumerate(zip(ids, labs)):
+        ids_pad[i,  :len(x)] = x
+        labs_pad[i, :len(l)] = l
+        attn[i,     :len(x)] = 1
+
     return {
-        "emb": emb,
-        "ids": ids_pad.to(device),
+        "emb":  emb,
+        "ids":  ids_pad.to(device),
+        "labs": labs_pad.to(device),
         "attn": attn.to(device),
-        "plens": torch.tensor(prompt_lens, device=device),
     }
 
 
@@ -361,12 +382,9 @@ def step_batch(batch, train_mode: bool = True) -> float:
     vis_attn = torch.ones(B, V_TOKENS, device=device, dtype=batch["attn"].dtype)
     attn = torch.cat([vis_attn, batch["attn"]], dim=1)
 
-    labels = batch["ids"].clone()
-    for i, plen in enumerate(batch["plens"]):
-        if plen < labels.size(1):
-            labels[i, :plen] = -100
     labels = torch.cat(
-        [torch.full((B, V_TOKENS), -100, device=device, dtype=torch.long), labels],
+        [torch.full((B, V_TOKENS), -100, device=device, dtype=torch.long),
+         batch["labs"]],
         dim=1,
     )
 
@@ -484,7 +502,7 @@ def demo(
     *,
     pool: Optional[List[int]] = None,
     prompt: str = PROMPT,
-    max_new_tokens: int = 96,
+    max_new_tokens: int = 60,
     temperature: float = 0.7,
     top_p: float = 0.9,
 ) -> str:
