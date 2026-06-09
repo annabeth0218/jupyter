@@ -179,7 +179,6 @@ cython_debug/
 
 # file to ignore
 a100apply.*
-checkpoints/
 data/
 CONCH/
 *.pt

@@ -29,18 +29,20 @@ class Projector(torch.nn.Module):
 def low_st(text: str) -> str:
     return text[:1].lower() + text[1:] if text else ""
 
+MISSING_DIAGNOSIS = "Pathological diagnosis: cannot tell from this slide"
+def _diagnosis_line(disease: str) -> str:
+    disease = (disease or "").strip()
+    if not disease:
+        return MISSING_DIAGNOSIS
+    return f"Pathological diagnosis: {disease}"
 
 def format_reference_caption(meta: Dict[str, Sequence[Any]], index: int) -> str:
-    title = _meta_value(meta, "title", index)
-    disease = _meta_value(meta, "disease", index)
-    subcls = _meta_value(meta, "subcls", index)
-    cls = _meta_value(meta, "cls", index)
     caption = _meta_value(meta, "captions", index) or _meta_value(meta, "caption", index)
-    diagnosis = f"Pathologic diagnosis: {disease}" if disease else "Pathologic diagnosis:"
-    if subcls or cls:
-        diagnosis += f", classified as {low_st(subcls)} within the broader category of {low_st(cls)}"
-    finding_prefix = f"{title} is shown. " if title and disease.lower() not in title.lower() else ""
-    return f"{diagnosis}.\nMicroscopic findings: {finding_prefix}{caption}".strip()
+    disease = _meta_value(meta, "disease", index)
+    caption = (caption or "").strip()
+    if not caption and not disease:
+        return ""
+    return f"Microscopic findings: {caption}\n{_diagnosis_line(disease)}"
 
 
 def generate_from_embedding(

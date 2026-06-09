@@ -26,7 +26,7 @@ PROMPT_FILE = Path(os.environ.get("PROMPT_FILE", "../prompts/base.txt"))
 PROMPT = PROMPT_FILE.read_text(encoding="utf-8")
 
 
-LLM_ID = "Qwen/Qwen2-7B-Instruct" # meta-llama/Llama-3.1-8B-Instruct, Qwen/Qwen2-7B-Instruct
+LLM_ID = "Qwen/Qwen2-7B-Instruct"
 V_TOKENS = 32              
 LR = 1e-4                  
 BSZ = 8

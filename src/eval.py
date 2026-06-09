@@ -148,7 +148,7 @@ def main() -> None:
             "id":     _shift_digits(_meta_at(meta, "id", idx),2),
             "image":  Path(_meta_at(meta, "image_paths", idx)).name,
             "model":  args.projector,
-            "caption": caption,
+            "caption": f"Microscopic findings: {caption}",
         }
         reference = format_reference_caption(meta, idx)
         if reference and reference != "Pathologic diagnosis:.\nMicroscopic findings:":
