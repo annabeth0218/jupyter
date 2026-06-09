@@ -1,8 +1,7 @@
 """
 get_embed.py
 
-Embed pathology images with the CONCH ViT-B/16 encoder and save a cache
-that is consumed directly by `projector_train_0502.py`.
+Embed pathology images with the CONCH ViT-B/16 encoder and save a cache.
 
 Inputs
 ------

@@ -3,7 +3,7 @@ from typing import Any, Dict, List, Sequence
 import torch, os
 from pathlib import Path
 
-PROMPT_FILE = Path(os.environ.get("PROMPT_FILE", "../train/prompts/guardrail.txt"))
+PROMPT_FILE = Path(os.environ.get("PROMPT_FILE", "../prompts/base.txt"))
 PROMPT = PROMPT_FILE.read_text(encoding="utf-8")
 DEFAULT_PROMPT = PROMPT_FILE.read_text(encoding="utf-8")
 

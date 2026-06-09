@@ -38,8 +38,8 @@ DROPOUT      = 0.1
 WARMUP_STEPS = 20 
 
 # Split / checkpoint locations
-SPLIT_PATH = Path("../test/checkpoints/val_idx.json")
-CKPT_PATH = Path("../test/checkpoints/proj-arvo_textbook-clean_qwen-1.pt")
+SPLIT_PATH = Path("../checkpoints/val_idx.json")
+CKPT_PATH = Path("../checkpoints/proj-arvo_textbook-clean_qwen-1.pt")
 LOSS_PNG = Path(f"{os.path.expandvars(STAGE_DIR)}/ls_arvo_textbook-clean_qwen-1.png")
 VAL_FRAC = 0.10
 
