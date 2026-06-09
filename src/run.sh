@@ -68,8 +68,8 @@ PROJECTOR="${PROJECTOR:-checkpoints/proj-arvo-llama.pt}"
 LLM="${LLM:-Qwen/Qwen2-7B-Instruct}"
 
 CONDA_ENV="${CONDA_ENV:-conch}"
-ID_KEY="${ID_KEY:-id}"
-IMAGE_KEY="${IMAGE_KEY:-image}"
+#ID_KEY="${ID_KEY:-id}"
+#IMAGE_KEY="${IMAGE_KEY:-image}"
 RUN_4BIT="${RUN_4BIT:-0}"
 MAX_NEW_TOKENS="${MAX_NEW_TOKENS:-200}"
 TEMPERATURE="${TEMPERATURE:-0.2}"
@@ -183,8 +183,8 @@ if [[ "$OWNS_CACHE" == "1" ]]; then
   echo "Step 1/2: embedding images from $SOURCE"
   EMBED_ARGS=(
     "$SOURCE"
-    --image-key "$IMAGE_KEY"
-    --id-key    "$ID_KEY"
+#    --image-key "$IMAGE_KEY"
+#    --id-key    "$ID_KEY"
     --output    "$CACHE"
   )
   [[ -n "$DEVICE" ]] && EMBED_ARGS+=(--device "$DEVICE")

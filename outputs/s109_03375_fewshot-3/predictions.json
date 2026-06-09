@@ -1,0 +1,98 @@
+[
+  {
+    "idx": 0,
+    "id": "S109-03375_01",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/epithelioid cell type and prominent nucleoli (arrow).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "Pathologic diagnosis: Carcinoma ex pleomorphic adenoma, classified as a carcinoma within the broader category of epithelial tumours\n.\nMicroscopic findings: Spindle cell pleomorphic adenoma is presented. The tumour cells are arranged in nests and sheets with prominent mitotic figures.#",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: epithelioid cell type and prominent nucleoli is shown. Epithelioid melanoma cells with prominent nucleoli are present."
+  },
+  {
+    "idx": 1,
+    "id": "S109-03375_01",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/low power shows a tumor in the subretinal area.jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "Pathologic diagnosis: Primary optic glioma, classified as primary tumours of the optic nerve and optic disc within the broader category of tumours of the optic nerve and optic disc\n.\nMicroscopic findings: Optic glioma is showed. The lesion is composed of a mixture of spindle cells and epithelioid cells with a high mitotic index.The 19th Amendment to the U.S. Constitution was ratified in 1920, granting women the right to vote. This amendment was a significant step forward for women's rights and paved the way for further advancements in gender equality. It marked the culmination of decades-long efforts by suffragists who fought tirelessly for women's suffrage. The amendment states that \"The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex.\"\n.\nMicroscopic description: The lesion is composed of a mixture of spindle cells and epithelioid cells with a high mitotic index. The tumour infiltrates the surrounding tissue and shows a diffuse growth pattern.The 19th Amendment to the U.S. Constitution was ratified in 1920, granting women the right to vote. This amendment was a significant step forward for women's rights and paved the way for further advancements in gender equality. It marked the culmination of decades-long efforts by suffragists who fought tirelessly for women's suffrage",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: low power tumor in the subretinal area is shown. Low power view shows an intraocular melanoma mass involving the posterior choroid/subretinal region."
+  },
+  {
+    "idx": 2,
+    "id": "S109-03375_02",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/mitotic figure (arrow) (2).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "##################################################################################################################################################",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: mitotic figure is shown. Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 3,
+    "id": "S109-03375_02",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/mitotic figure (arrow).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "#################################################################################################################################################",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: mitotic figure is shown. Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 4,
+    "id": "S109-03375_03",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle A cell type has nuclear grooving (arrow).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "##",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle A cell type with nuclear grooving is shown. Spindle A melanoma cells with nuclear grooves are present."
+  },
+  {
+    "idx": 5,
+    "id": "S109-03375_03",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle B cell type (arrow).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "Pathologic diagnosis: Carcinoma of the lacrimal gland, classified as epithelial tumours within the broader category of tumours of the exocrine glands\n.\nMicroscopic findings: The epithelium shows a marked increase in mitotic figures and pleomorphism.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle B cell type is shown. Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 6,
+    "id": "S109-03375_04",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle cell type (arrow).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "#",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle cell type is shown. Spindle melanoma cells are present."
+  },
+  {
+    "idx": 7,
+    "id": "S109-03375_04",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/spoindle B cell type (arrow).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "####",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle B cell type is shown. Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 8,
+    "id": "S109-03375_05",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera (2).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "Pathologic diagnosis: Carcinoma of the lacrimal gland, classified as epithelial tumours within the broader category of tumours of the exocrine glands\n.\nMicroscopic findings: Lymphoepithelial carcinoma is showed. The lesion is located in the lacrimal gland and is surrounded by a fibrous capsule.Human chorionic gonadotropin (hCG) is showed. The tumour cells are positive for hCG and negative for CD56.Human chorionic gonadotropin (hCG) is showed. The tumour cells are positive for hCG and negative for CD56.Human chorionic gonadotropin (hCG) is showed. The tumour cells are positive for hCG and negative for CD56.The 19th century saw the development of the first vaccines, which were used to protect against various diseases. Which disease was one of the first to be targeted by a vaccine?\nA) Smallpox\nB) Tuberculosis\nC) Polio\nD) Measles\nAnswer: A) Smallpox\nThe first successful vaccine was developed by Edward Jenner in 1796, which was used to protect against smallpox. This vaccine involved using a weakened form of the virus to stimulate an immune response without causing the disease. Smallpox was declared eradicated in 1980, making it one",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 9,
+    "id": "S109-03375_05",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera (circle).jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "Pathologic diagnosis: Carcinoma ex pleomorphic sarcoma, classified as carcinomas within the broader category of tumours derived from epithelial tissue\n.\nMicroscopic description: The lesion is a spindle cell tumour with a high mitotic rate and pleomorphism.# 肾细胞癌\n## 肾细胞癌\n\n### 病理分类\n肾细胞癌，作为起源于上皮组织的肿瘤，属于泌尿系统肿瘤的大类别。\n\n### 分类和命名\n- 诊断：肾细胞癌\n- 分类：Carcinoma ex pleomorphic sarcoma，被归类为癌性病变\n- 命名：肾细胞癌，具体指在肾脏内发生的癌性病变\n\n### 病理特征\n肾细胞癌由分化良好的肾小管样结构构成，这些结构可以是孤立的或成群出现。核分裂象常见，且细胞形态多样。免疫组化显示CK7、CK19、CD10、Vimentin、EMA、TTF-1、Napsin A、PAX2、PAX8、SMA、Desmin、PLAP等标记呈阳性。Ki67指数通常较高。\n\n### 诊断\n肾细胞癌的诊断需要结合临床表现、影像学特征以及组织学特点进行综合判断。组织学上，需要与肾母细胞瘤、肾血管肉瘤、肾",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 10,
+    "id": "S109-03375_06",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera.jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "Pathologic diagnosis: Carcinoma of the lacrimal gland, classified as primary tumours within the broader category of tumours of the lacrimal gland and extraocular muscles\n.\nMicroscopic findings: Lymphomatoid papillomatosis is showed. The lesion is composed of a proliferation of atypical lymphocytes with prominent nucleoli and mitotic figures.The answer should be in the following format:\nMicroscopic description: The tumour is composed of spindle-shaped cells arranged in fascicles, with areas of palisading and prominent mitoses. There is a high nuclear-to-cytoplasmic ratio and pleomorphism. The stroma is infiltrated by atypical lymphocytes.\n\nKey supporting features: \n1. Palisading of tumour cells\n2. High nuclear-to-cytoplasmic ratio\n3. Pleomorphism\n4. Infiltration of atypical lymphocytes into the stroma\n\nLymphomatoid papillomatosis: This tumour is classified within the broader category of tumours of the lacrimal gland and extraocular muscles, which includes various types of tumours that can occur within the lacrimal gland.\n.\nMicroscopic findings: The lesion is composed of a proliferation of atypical lymphocytes with prominent nucleoli and mitotic figures. There is a high nuclear-to-cytoplasmic ratio and pleomorphism. The stroma is infiltrated by atypical lymphocytes.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 11,
+    "id": "S109-03375_06",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/vitreous seeding of tumor cells.jpg",
+    "model": "checkpoints/projector_best_0501-2.pt",
+    "caption": "Pathologic diagnosis: Carcinoma of the lacrimal gland, classified as a carcinoma within the broader category of tumours of the exocrine glands\n.\nMicroscopic findings: Lacrimal gland carcinoma is showed. The lesion is composed of sheets of cells with prominent nucleoli and mitotic figures.#<https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3708945/>",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: vitreous seeding of tumor cells is shown. Pigmented melanoma cells are present in the vitreous, consistent with vitreous seeding."
+  }
+]

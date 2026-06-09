@@ -15,7 +15,7 @@ class Projector(torch.nn.Module):
         self.mlp = torch.nn.Sequential(
             torch.nn.Linear(d_in, h_out),
             torch.nn.GELU(),
-            torch.nn.Dropout(dropout),
+            #torch.nn.Dropout(dropout),
             torch.nn.Linear(h_out, h_out * v_tokens),
         )
         self.pos = torch.nn.Parameter(torch.zeros(v_tokens, h_out))

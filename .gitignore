@@ -178,11 +178,8 @@ cython_debug/
 .DS_Store
 
 # file to ignore
-textbook/
-Hung-Yi Lee/
 a100apply.*
 checkpoints/
 data/
 CONCH/
-outputs/
-
+*.pt

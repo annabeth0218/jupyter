@@ -1,0 +1,50 @@
+[
+  {
+    "idx": 0,
+    "id": "S114-44080",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S114-44080_Conjunctival compound nevus_v2/conjuncitval epithelium with proliferation of melanocytes.jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "",
+    "reference": "Pathologic diagnosis: Conjunctival compound nevus.\nMicroscopic findings: conjuncitval epithelium with proliferation of melanocytes is shown. conjuncitval epithelium with proliferation of melanocytes"
+  },
+  {
+    "idx": 1,
+    "id": "S114-44080",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S114-44080_Conjunctival compound nevus_v2/round shape melanocytes arranged in nests distributing in both epithlieum and substatia propria.jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "",
+    "reference": "Pathologic diagnosis: Conjunctival compound nevus.\nMicroscopic findings: round shape melanocytes arranged in nests distributing in both epithlieum and substatia propria is shown. round shape melanocytes arranged in nests distributing in both epithlieum and substatia propria"
+  },
+  {
+    "idx": 2,
+    "id": "S114-44080",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S114-44080_Conjunctival compound nevus_v2/nests of melanocytes in junctional part and substaintia propria_consistent with diagnosis of compound nevus (2).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "",
+    "reference": "Pathologic diagnosis: Conjunctival compound nevus.\nMicroscopic findings: nests of melanocytes in junctional part and substaintia propria_consistent with diagnosis of compound nevus (2) is shown. nests of melanocytes in junctional part and substaintia propria_consistent with diagnosis of compound nevus (2)"
+  },
+  {
+    "idx": 3,
+    "id": "S114-44080",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S114-44080_Conjunctival compound nevus_v2/nests of melanocyts in the substaintia propria (subepithelial part).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "",
+    "reference": "Pathologic diagnosis: Conjunctival compound nevus.\nMicroscopic findings: nests of melanocyts in the substaintia propria (subepithelial part) is shown. nests of melanocyts in the substaintia propria (subepithelial part)"
+  },
+  {
+    "idx": 4,
+    "id": "S114-44080",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S114-44080_Conjunctival compound nevus_v2/nests of melanocytes within the epithelium (juntional part).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "",
+    "reference": "Pathologic diagnosis: Conjunctival compound nevus.\nMicroscopic findings: nests of melanocytes within the epithelium (juntional part) is shown. nests of melanocytes within the epithelium (juntional part)"
+  },
+  {
+    "idx": 5,
+    "id": "S114-44080",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S114-44080_Conjunctival compound nevus_v2/nests of melanocytes in junctional part and substaintia propria_consistent with diagnosis of compound nevus.jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "",
+    "reference": "Pathologic diagnosis: Conjunctival compound nevus.\nMicroscopic findings: nests of melanocytes in junctional part and substaintia propria_consistent with diagnosis of compound nevus is shown. nests of melanocytes in junctional part and substaintia propria_consistent with diagnosis of compound nevus"
+  }
+]

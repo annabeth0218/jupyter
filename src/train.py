@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+import time, datetime, platform
 import argparse
 import json
 import math
@@ -26,22 +26,34 @@ PROMPT_FILE = Path(os.environ.get("PROMPT_FILE", "../prompts/base.txt"))
 PROMPT = PROMPT_FILE.read_text(encoding="utf-8")
 
 
-LLM_ID = "Qwen/Qwen2-7B-Instruct" # meta-llama/Llama-3.1-8B-Instruct, Qwen/Qwen2-7B-Instruct
-V_TOKENS = 16              
-LR = 5e-5                  
+LLM_ID = "Qwen/Qwen2.5-VL-7B-Instruct" # meta-llama/Llama-3.1-8B-Instruct, Qwen/Qwen2-7B-Instruct
+V_TOKENS = 32              
+LR = 1e-4                  
 BSZ = 4
-EPOCHS = 12
-MAX_TXT_TOK = 256
+EPOCHS = 8
+MAX_TXT_TOK = 128
 FP16 = False
 WEIGHT_DECAY = 0.05      
 DROPOUT      = 0.1       
 WARMUP_STEPS = 20 
 
 # Split / checkpoint locations
-SPLIT_PATH = Path("../checkpoints/val_idx.json")
-CKPT_PATH = Path("../checkpoints/proj-arvo_textbook-clean_qwen-1.pt")
-LOSS_PNG = Path(f"{os.path.expandvars(STAGE_DIR)}/ls_arvo_textbook-clean_qwen-1.png")
 VAL_FRAC = 0.10
+SPLIT_PATH = Path("../checkpoints/val_idx.json")
+
+def make_run_id() -> str:
+    chars = "0123456789abcdefghijklmnopqrstuvwxyz"
+    n = int(time.time()) // 60   # minutes since epoch
+    result = []
+    while n:
+        result.append(chars[n % 36])
+        n //= 36
+    return "".join(reversed(result)) 
+    
+RUN_ID = make_run_id()
+CKPT_PATH = Path(f"../checkpoints/proj_{RUN_ID}.pt")
+LOSS_PNG  = Path(f"../checkpoints/loss_{RUN_ID}.png")
+MODEL_CARD_PATH = Path(f"../checkpoints/proj_card_{RUN_ID}.json")
 
 # Fallback diagnosis text used when the manifest has no `disease` field.
 MISSING_DIAGNOSIS = "Pathological diagnosis: cannot tell from this slide"
@@ -53,6 +65,37 @@ bnb_cfg = BitsAndBytesConfig(
     bnb_4bit_use_double_quant=True,
 )
 
+def write_model_card(path: Path, run_id: str, val_idx: list) -> None:
+    card = {
+        "run_id":        run_id,
+        "created_at":    datetime.datetime.now().isoformat(),
+        "host":          platform.node(),
+        # data
+        "cache":         CACHE_PT,
+        "n_train":       N - len(val_idx),
+        "n_val":         len(val_idx),
+        # architecture
+        "encoder":       "CONCH ViT-B/16",
+        "llm":           LLM_ID,
+        "v_tokens":      V_TOKENS,
+        # training
+        "lr":            LR,
+        "batch_size":    BSZ,
+        "epochs":        EPOCHS,
+        "weight_decay":  WEIGHT_DECAY,
+        "dropout":       DROPOUT,
+        "warmup_steps":  WARMUP_STEPS,
+        "max_txt_tok":   MAX_TXT_TOK,
+        "fp16":          FP16,
+        "val_frac":      VAL_FRAC,
+        # paths
+        "ckpt_path":     str(CKPT_PATH),
+        "loss_png":      str(LOSS_PNG),
+        "prompt_file":   str(PROMPT_FILE),
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(card, indent=2), encoding="utf-8")
+    print(f"Model card written to {path}")
 
 # ---------------------------------------------------------------------------
 # Cache loading
@@ -363,10 +406,12 @@ def train_loop(epochs: int = EPOCHS, ckpt_path: Path = CKPT_PATH) -> float:
     tl, vl = [], []
     best = math.inf
     stop = 0
+    epoch_log = [] 
 
     for ep in range(epochs):
         # ---- TRAIN ----
         last_tloss = None
+        epoch_tlosses = []
         for batch in tqdm(loader, desc=f"train ep{ep+1}/{epochs}"):
             last_tloss = step_batch(batch, train_mode=True)
             tl.append(last_tloss)
@@ -386,7 +431,7 @@ def train_loop(epochs: int = EPOCHS, ckpt_path: Path = CKPT_PATH) -> float:
         mean_vl = sum(epoch_vlosses) / len(epoch_vlosses)
         print(f"epoch {ep+1}: train {last_tloss:.3f} | val {mean_vl:.3f}")
 
-        if mean_vl < best:
+        if best - mean_vl > 0.01:
             best = mean_vl
             stop = 0
             ckpt_path.parent.mkdir(parents=True, exist_ok=True)
@@ -525,8 +570,12 @@ if __name__ == "__main__":
         vloader = DataLoader(val, batch_size=BSZ, shuffle=False, collate_fn=collate)
         print(f"(reuse) train: {len(train_idx)} | val: {len(val_idx)}")
 
+    write_model_card(MODEL_CARD_PATH, RUN_ID, val_idx)
     best = train_loop(epochs=args.epochs)
     print(f"Best val loss: {best:.4f}")
+    card = json.loads(MODEL_CARD_PATH.read_text())
+    card["best_val_loss"] = round(best, 6)
+    MODEL_CARD_PATH.write_text(json.dumps(card, indent=2))
 
     if not args.no_graph:
         out = loss_graph()

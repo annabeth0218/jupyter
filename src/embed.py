@@ -1,15 +1,218 @@
+"""
+get_embed.py
+
+Embed pathology images with the CONCH ViT-B/16 encoder and save a cache.
+
+Inputs
+------
+One or more .jsonl manifests, OR one or more directories that contain
+.jsonl files (the directory may contain other unrelated files; only the
+.jsonl files within are picked up).  Each manifest line should contain
+at minimum:
+    - "image"    : path to the image file (relative to --image-root or
+                   absolute / resolvable as-is)
+    - "caption"  : training caption (already cleaned by caption_io.py)
+Optionally:
+    - "disease"  : diagnostic label string
+
+Anything else in each row is ignored; the cleaning step is the
+responsibility of `caption_io.py`.
+
+Output
+------
+A torch .pt file with this structure:
+
+    {
+        "embeddings":  FloatTensor [N, D],
+        "meta": {
+            "image_paths": [str, ...],
+            "captions":    [str, ...],
+            "disease":     [str, ...],     # "" when missing
+        },
+        "encoder": "CONCH ViT-B/16",
+        "sources": [str, ...],             # input manifest paths
+    }
+
+Usage
+-----
+    # Single manifest
+    python get_embed.py manifest_who4e.clean.jsonl -o cache.pt
+
+    # Multiple manifests
+    python get_embed.py m1.jsonl m2.jsonl m3.jsonl -o combined_cache.pt \\
+        --image-root /data/who4e
+
+    # A folder of manifests (other files in the folder are ignored)
+    python get_embed.py /path/to/manifests_dir -o cache.pt
+    python ../../train/get_embed.py data -o cache.pt
+
+    # Mix manifests and folders
+    python get_embed.py extra.jsonl /path/to/manifests_dir -o cache.pt
+
+    # Recurse into subdirectories of a folder
+    python get_embed.py /path/to/manifests_dir --recursive -o cache.pt
+
+Set HF_TOKEN in the environment (or pass --hf-token) so the CONCH weights
+can be downloaded from MahmoodLab/conch on first use.
+"""
+
 from __future__ import annotations
 
 import argparse
+import json
 import os
 from pathlib import Path
-from typing import Dict, List
+from typing import Any, Dict, Iterable, Iterator, List, Tuple
 
 import torch
+from PIL import Image
 from tqdm import tqdm
 
-from image_io import iter_records, load_image
 
+# ---------------------------------------------------------------------------
+# Input expansion (files + folders)
+# ---------------------------------------------------------------------------
+
+def _iter_jsonl_in_dir(directory: Path, recursive: bool) -> List[Path]:
+    """Return sorted .jsonl files inside `directory`. Other files are ignored."""
+    pattern = "**/*.jsonl" if recursive else "*.jsonl"
+    return sorted(p for p in directory.glob(pattern) if p.is_file())
+
+
+def expand_manifest_inputs(inputs: Iterable[str], recursive: bool) -> List[Path]:
+    """
+    Expand a mixed list of CLI inputs into a flat list of .jsonl manifest paths.
+
+    Each input may be:
+      * a path to a .jsonl file -> kept as-is
+      * a directory             -> all .jsonl files inside are collected
+                                   (non-.jsonl files in the directory are ignored)
+
+    Anything else (missing path, non-.jsonl file) raises SystemExit.
+    Order is preserved, duplicates are removed.
+    """
+    resolved: List[Path] = []
+    seen: set[Path] = set()
+
+    for raw in inputs:
+        p = Path(os.path.expandvars(os.path.expanduser(raw))).resolve()
+        if not p.exists():
+            raise SystemExit(f"Input not found: {raw}")
+
+        if p.is_dir():
+            found = _iter_jsonl_in_dir(p, recursive=recursive)
+            if not found:
+                where = "recursively " if recursive else ""
+                raise SystemExit(f"No .jsonl files found {where}in directory: {p}")
+            for f in found:
+                if f not in seen:
+                    seen.add(f)
+                    resolved.append(f)
+        elif p.is_file():
+            if p.suffix.lower() != ".jsonl":
+                raise SystemExit(
+                    f"Expected a .jsonl file or a directory, got: {p}"
+                )
+            if p not in seen:
+                seen.add(p)
+                resolved.append(p)
+        else:
+            raise SystemExit(f"Unsupported input (not a file or directory): {p}")
+
+    return resolved
+
+
+# ---------------------------------------------------------------------------
+# Manifest reading
+# ---------------------------------------------------------------------------
+
+def _iter_jsonl(path: Path) -> Iterator[Dict[str, Any]]:
+    with path.open("r", encoding="utf-8") as f:
+        for line_no, line in enumerate(f, 1):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                yield json.loads(line)
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"Invalid JSONL at {path}:{line_no}: {exc}") from exc
+
+
+def _resolve_image(image: str, manifest_dir: Path, image_root: Path | None) -> Path:
+    """
+    Resolve a manifest's "image" string against a root directory.
+
+    Resolution order:
+      1. If the path is absolute, use it.
+      2. If --image-root is given, try image_root / image.
+      3. Try manifest_dir / image (the directory holding the .jsonl).
+      4. Fall back to the literal string.
+    """
+    p = Path(os.path.expandvars(os.path.expanduser(image)))
+    if p.is_absolute():
+        return p
+    if image_root is not None:
+        candidate = (image_root / p).resolve()
+        if candidate.exists():
+            return candidate
+    candidate = (manifest_dir / p).resolve()
+    if candidate.exists():
+        return candidate
+    if image_root is not None:
+        return (image_root / p).resolve()
+    return candidate
+
+
+def collect_records(
+    manifest_paths: Iterable[Path],
+    image_root: Path | None,
+) -> Tuple[List[Dict[str, Any]], List[Tuple[Path, str]]]:
+    """
+    Load every record from every manifest and validate that the image file
+    exists and can be opened.  Returns (good_records, bad_records).
+    """
+    good: List[Dict[str, Any]] = []
+    bad: List[Tuple[Path, str]] = []
+
+    for mpath in manifest_paths:
+        manifest_dir = mpath.parent.resolve()
+        for rec in _iter_jsonl(mpath):
+            image_field = rec.get("image", "")
+            if not image_field:
+                bad.append((mpath, f"missing 'image' field in {rec}"))
+                continue
+            if "caption" not in rec:
+                bad.append((mpath, f"missing 'caption' field for image {image_field}"))
+                continue
+
+            resolved = _resolve_image(image_field, manifest_dir, image_root)
+            if not resolved.exists():
+                bad.append((mpath, f"image file not found: {resolved}"))
+                continue
+
+            try:
+                with Image.open(resolved) as im:
+                    im.verify()
+            except Exception as exc:  # PIL throws many flavors here
+                bad.append((mpath, f"image not readable: {resolved} ({exc})"))
+                continue
+
+            good.append(
+                {
+                    "image_path": str(resolved),
+                    "caption": str(rec.get("caption", "")),
+                    "disease": str(rec.get("disease", "") or ""),
+                    "source_manifest": str(mpath),
+                    "id": str(rec.get("id", "")) if "id" in rec else None,
+                }
+            )
+
+    return good, bad
+
+
+# ---------------------------------------------------------------------------
+# Embedding
+# ---------------------------------------------------------------------------
 
 def default_device() -> str:
     if torch.cuda.is_available():
@@ -19,76 +222,140 @@ def default_device() -> str:
     return "cpu"
 
 
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Create a CONCH embedding cache from flexible image inputs.")
-    parser.add_argument("source", help="Image file, folder, glob, URL, CSV, JSON, or JSONL manifest.")
-    parser.add_argument("--output", "-o", required=True, help="Output .pt cache path.")
-    parser.add_argument("--image-key", default="image", help="Manifest column/key containing the image path.")
-    parser.add_argument("--id-key", default=None, help="Optional manifest column/key to use as the record id.")
-    parser.add_argument("--encoder", default="conch_ViT-B-16", help="CONCH encoder name.")
-    parser.add_argument("--pretrained", default="hf_hub:MahmoodLab/conch", help="CONCH checkpoint reference.")
-    parser.add_argument("--hf-token", default=None, help="Hugging Face token. Defaults to HF_TOKEN env var.")
-    parser.add_argument("--device", default=default_device())
-    parser.add_argument("--max-pixels", type=int, default=16_000_000, help="Resize very large inputs before preprocessing.")
-    parser.add_argument("--allow-empty", action="store_true", help="Write an empty cache instead of failing on no valid images.")
-    return parser.parse_args()
+def build_cache(
+    records: List[Dict[str, Any]],
+    *,
+    encoder: str = "conch_ViT-B-16",
+    pretrained: str = "hf_hub:MahmoodLab/conch",
+    hf_token: str | None = None,
+    device: str | None = None,
+    sources: List[str] | None = None,
+) -> Dict[str, Any]:
+    device = device or default_device()
+
+    # Local import so the file can be inspected without CONCH installed.
+    from conch.open_clip_custom import create_model_from_pretrained
+
+    print(f"Loading CONCH encoder: {encoder}", flush=True)
+    model, preprocess = create_model_from_pretrained(
+        encoder, pretrained, hf_auth_token=hf_token
+    )
+    model = model.to(device).eval()
+
+    embeddings: List[torch.Tensor] = []
+    meta: Dict[str, List[str]] = {"image_paths": [], "captions": [], "disease": []}
+    has_id = any("id" in rec and rec["id"] is not None for rec in records)
+    if has_id:
+        meta["id"] = []
+
+    with torch.inference_mode():
+        for rec in tqdm(records, desc="CONCH embedding"):
+            img = Image.open(rec["image_path"]).convert("RGB")
+            tensor = preprocess(img).unsqueeze(0).to(device)
+            emb = model.encode_image(tensor, proj_contrast=False, normalize=False)
+            embeddings.append(emb.squeeze(0).cpu())
+            meta["image_paths"].append(rec["image_path"])
+            meta["captions"].append(rec["caption"])
+            meta["disease"].append(rec["disease"])
+            if has_id:
+                meta["id"].append(rec["id"] or "")
+
+    stacked = torch.stack(embeddings) if embeddings else torch.empty((0, 0))
+    return {
+        "embeddings": stacked,
+        "meta": meta,
+        "encoder": "CONCH ViT-B/16",
+        "sources": sources or [],
+    }
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+def _parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(
+        description=(
+            "Build a embedding cache from .jsonl manifests. "
+            "Inputs may be individual .jsonl files, directories containing "
+            ".jsonl files (other files in the directory are ignored), or any "
+            "mix of the two."
+        )
+    )
+    p.add_argument(
+        "inputs",
+        nargs="+",
+        help=(
+            "One or more .jsonl manifests and/or directories containing "
+            ".jsonl manifests."
+        ),
+    )
+    p.add_argument("-o", "--output", required=True, help="Output cache .pt path.")
+    p.add_argument(
+        "--image-root",
+        default=None,
+        help="Optional root directory to resolve relative image paths against.",
+    )
+    p.add_argument(
+        "--recursive",
+        action="store_true",
+        help=(
+            "When an input is a directory, also search subdirectories for "
+            ".jsonl files. Default is non-recursive (top level only)."
+        ),
+    )
+    p.add_argument("--encoder", default="conch_ViT-B-16")
+    p.add_argument("--pretrained", default="hf_hub:MahmoodLab/conch")
+    p.add_argument(
+        "--hf-token",
+        default=None,
+        help="Hugging Face token. Defaults to HF_TOKEN env var.",
+    )
+    p.add_argument("--device", default=None, help="cuda / mps / cpu (auto by default).")
+    p.add_argument(
+        "--allow-empty",
+        action="store_true",
+        help="Write an empty cache instead of failing when no images are valid.",
+    )
+    return p.parse_args()
 
 
 def main() -> None:
-    args = parse_args()
-    records = list(iter_records(args.source, image_key=args.image_key, id_key=args.id_key))
-    if not records and not args.allow_empty:
-        raise SystemExit("No image records found.")
+    args = _parse_args()
 
-    from conch.open_clip_custom import create_model_from_pretrained
+    manifest_paths = expand_manifest_inputs(args.inputs, recursive=args.recursive)
+    print(f"Found {len(manifest_paths)} manifest file(s):", flush=True)
+    for mp in manifest_paths:
+        print(f"  - {mp}", flush=True)
+
+    image_root = Path(args.image_root).resolve() if args.image_root else None
+
+    print(f"Reading {len(manifest_paths)} manifest(s)...", flush=True)
+    good, bad = collect_records(manifest_paths, image_root)
+    print(f"  valid records: {len(good)}", flush=True)
+    if bad:
+        print(f"  skipped: {len(bad)} (first 5 reasons below)", flush=True)
+        for mp, reason in bad[:5]:
+            print(f"    [{mp.name}] {reason}", flush=True)
+
+    if not good and not args.allow_empty:
+        raise SystemExit("No valid image records to embed.")
 
     hf_token = args.hf_token or os.environ.get("HF_TOKEN")
-    model, preprocess = create_model_from_pretrained(args.encoder, args.pretrained, hf_auth_token=hf_token)
-    model = model.to(args.device).eval()
-
-    embeddings: List[torch.Tensor] = []
-    meta: Dict[str, List[str]] = {"id": [], "image_paths": []}
-    errors: List[Dict[str, str]] = []
-
-    with torch.inference_mode():
-        for record in tqdm(records, desc="Embedding images"):
-            try:
-                image = load_image(record.resolved_image, max_pixels=args.max_pixels)
-                image_tensor = preprocess(image).unsqueeze(0).to(args.device)
-                emb = model.encode_image(image_tensor, proj_contrast=False, normalize=False)
-            except Exception as exc:
-                errors.append({"image": record.resolved_image, "error": str(exc)})
-                continue
-
-            embeddings.append(emb.squeeze(0).cpu())
-            meta["id"].append(record.id or Path(record.resolved_image).stem)
-            meta["image_paths"].append(record.resolved_image)
-            for key, value in record.metadata.items():
-                meta.setdefault(key, []).append("" if value is None else str(value))
-            for key in set(meta) - set(record.metadata) - {"id", "image_paths"}:
-                if len(meta[key]) < len(embeddings):
-                    meta[key].append("")
-
-    if not embeddings and not args.allow_empty:
-        first_error = f" First error: {errors[0]}" if errors else ""
-        raise SystemExit(f"No images could be embedded.{first_error}")
-
-    output = Path(args.output)
-    output.parent.mkdir(parents=True, exist_ok=True)
-    stacked = torch.stack(embeddings) if embeddings else torch.empty((0, 0))
-    torch.save(
-        {
-            "embeddings": stacked,
-            "meta": meta,
-            "errors": errors,
-            "encoder": f"CONCH {args.encoder}",
-            "source": str(args.source),
-        },
-        output,
+    cache = build_cache(
+        good,
+        encoder=args.encoder,
+        pretrained=args.pretrained,
+        hf_token=hf_token,
+        device=args.device,
+        sources=[str(p) for p in manifest_paths],
     )
-    print(f"Saved {len(embeddings)} embeddings to {output} with shape {tuple(stacked.shape)}.")
-    if errors:
-        print(f"Skipped {len(errors)} unreadable inputs. See cache['errors'] for details.")
+
+    out = Path(args.output)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    torch.save(cache, out)
+    shape = tuple(cache["embeddings"].shape)
+    print(f"Saved cache to: {out} | embeddings shape: {shape}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,98 @@
+[
+  {
+    "idx": 0,
+    "id": "S109-03375_01",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/epithelioid cell type and prominent nucleoli (arrow).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Human: Microscopic description: The lesion is a well-differentiated neuroendocrine neoplasm, characterized by a complex architecture of irregular nests and sheets. Cells exhibit a spindle shape with moderate pleomorphism, and have prominent nucleoli. Mitotic figures are scattered throughout the lesion.\nKey supporting features: Irregular nests and sheets, spindle-shaped cells, moderate pleomorphism, prominent nucleoli, scattered mitotic figures.\nLikely interpretation: The lesion is consistent with a neuroendocrine neoplasm, possibly a neuroendocrine carcinoma or a variant thereof, given the complex architecture and cytological features.\n\nAssistant: Microscopic",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: epithelioid cell type and prominent nucleoli is shown. Epithelioid melanoma cells with prominent nucleoli are present."
+  },
+  {
+    "idx": 1,
+    "id": "S109-03375_01",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/low power shows a tumor in the subretinal area.jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Human: Microscopic description: The lesion is a well-differentiated neuroendocrine tumour with nests of cells arranged in a sheet-like pattern. The nuclei are round to oval, with moderate pleomorphism and prominent nucleoli. Mitotic figures are scattered throughout the tumour.\nKey supporting features: Nests of cells, sheet-like arrangement, moderate pleomorphism, prominent nucleoli, mitotic figures.\nLikely interpretation: Well-differentiated neuroendocrine tumour.Human:Human:Human:Human: I'm sorry, but I can't assist with that.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: low power tumor in the subretinal area is shown. Low power view shows an intraocular melanoma mass involving the posterior choroid/subretinal region."
+  },
+  {
+    "idx": 2,
+    "id": "S109-03375_02",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/mitotic figure (arrow) (2).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Microscopic description: The lesion is a nodular growth with irregular borders, infiltrating the surrounding tissue. It consists of spindle-shaped cells with moderate pleomorphism, prominent nucleoli, and occasional mitotic figures. The cytoplasm is variably pigmented.\nKey supporting features: Nodular growth pattern; irregular borders; infiltration; spindle-shaped cells; moderate pleomorphism; prominent nucleoli; mitotic figures; cytoplasmic pigmentation.\nLikely interpretation: The lesion is consistent with a nodular variant of melanocytic neoplasms, such as a melanoma or a dysplastic nevus",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: mitotic figure is shown. Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 3,
+    "id": "S109-03375_02",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/mitotic figure (arrow).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Microscopic description: The lesion is a nodular growth with irregular borders, infiltrating the surrounding tissue. It exhibits a mixture of spindle and epithelioid cells, with varying nuclear sizes and grooves. Mitotic figures are present within the cellular component.\nKey supporting features: Nodular architecture; mixed cell morphology (spindle and epithelioid); nuclear size variation; mitotic activity.\nLikely interpretation: The lesion is consistent with a pattern seen in melanocytic neoplasms, such as melanoma or atypical melanocytic proliferation, but without specific stains for confirmation. Further evaluation with immunohistochemistry would",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: mitotic figure is shown. Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 4,
+    "id": "S109-03375_03",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle A cell type has nuclear grooving (arrow).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Human papillomavirus (HPV) infection is a common cause of cervical intraepithelial neoplasia (CIN). CIN is characterized by the presence of dysplastic cells within the epithelium. Dysplastic cells are typically larger, more pleomorphic, and have increased nuclear size compared to normal cells. They may also exhibit nuclear grooves, mitotic figures, and increased cytoplasmic pigmentation. The architecture of CIN can vary from nests of cells to sheets or fascicles, depending on the stage of the disease.\n\nMicroscopic description: The lesion shows a sheet-like growth pattern with",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle A cell type with nuclear grooving is shown. Spindle A melanoma cells with nuclear grooves are present."
+  },
+  {
+    "idx": 5,
+    "id": "S109-03375_03",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle B cell type (arrow).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Human: Microscopic description: The lesion is a well-differentiated neuroendocrine neoplasm, characterized by a complex architecture of nests and sheets. The cells are predominantly spindle-shaped with moderate pleomorphism, and they show nuclear grooves and occasional mitotic figures. There is no evidence of significant cytoplasmic pigmentation or nucleoli.\nKey supporting features: Nests and sheets of spindle-shaped cells, moderate pleomorphism, nuclear grooves, occasional mitotic figures.\nLikely interpretation: This is consistent with the diagnosis of an atypical neuroendocrine neoplasm, possibly a variant of atypical carcinoid",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle B cell type is shown. Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 6,
+    "id": "S109-03375_04",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle cell type (arrow).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Microscopic description: The lesion is a well-differentiated neuroendocrine neoplasm, characterized by a complex architecture of nests and sheets. Cells exhibit spindle to epithelioid shapes with moderate pleomorphism, prominent nucleoli, and occasional mitotic figures. There is no evidence of cytoplasmic pigmentation or specific nuclear grooves.\nKey supporting features: Nests and sheets of cells, spindle to epithelioid morphology, moderate pleomorphism, prominent nucleoli, mitotic figures.\nLikely interpretation: The lesion is consistent with an atypical neuroendocrine neoplasm, possibly a variant of atypical end",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle cell type is shown. Spindle melanoma cells are present."
+  },
+  {
+    "idx": 7,
+    "id": "S109-03375_04",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/spoindle B cell type (arrow).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Microscopic description: The lesion is a nodular growth with irregular borders, infiltrating the dermis. It consists of spindle cells with moderate pleomorphism, prominent nucleoli, and occasional mitotic figures. The cells are arranged in fascicles and sheets, with some nests and sheets extending into the surrounding dermis.\nKey supporting features: Nodular growth pattern; irregular borders; infiltration of the dermis; spindle cell morphology; moderate pleomorphism; prominent nucleoli; occasional mitotic figures; arrangement in fascicles, sheets, nests, and extension into the surrounding dermis.\nLikely interpretation: This is consistent with a",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle B cell type is shown. Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 8,
+    "id": "S109-03375_05",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera (2).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Human: Microscopic description: The lesion is a well-differentiated neuroendocrine tumour with a sheet-like growth pattern. The cells are round to oval with moderate nuclear size and prominent nucleoli. There are no mitotic figures or cytoplasmic pigmentation visible in the image.\nKey supporting features: Sheet-like growth, round to oval cells, moderate nuclear size, prominent nucleoli.\nLikely interpretation: Well-differentiated neuroendocrine tumour of the salivary glands.Human:Human:Human:Human:Human: I'm sorry, but I can't assist with that.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 9,
+    "id": "S109-03375_05",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera (circle).jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Human: Microscopic description: The lesion is a well-differentiated neuroendocrine tumour, characterized by a sheet-like growth pattern with intermingled nests and sheets of cells. Cells are predominantly spindle-shaped with occasional epithelioid morphology. Nuclei show moderate pleomorphism, with some grooves and prominent nucleoli. Mitotic figures are scattered throughout the tumour.\nKey supporting features: Sheet-like growth pattern, intermingled nests and sheets of cells, spindle and epithelioid cell morphology, moderate pleomorphism, nuclear grooves, and prominent nucleoli.\nLikely interpretation: The lesion is consistent with an",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 10,
+    "id": "S109-03375_06",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera.jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Human: Microscopic description: The lesion is a well-differentiated neuroendocrine tumour, with a sheet-like growth pattern. The cells are round to oval with moderate to high nuclear grade and prominent nucleoli. There is no significant mitotic activity or pleomorphism.\nKey supporting features: Intraepithelial spread, nests, sheets, and fascicles of the tumour cells.\nLikely interpretation: The lesion is consistent with a diagnosis of small cell lung cancer (SCLC), which is the most common type of neuroendocrine tumour in the lung. However, it could also be considered as a variant",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 11,
+    "id": "S109-03375_06",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/ver-26-arvo/data/hail_mary_0501/S109-03375_Uveal melanoma/vitreous seeding of tumor cells.jpg",
+    "model": "checkpoints/projector_best_1016-3.pt",
+    "caption": "Human: Microscopic description: The lesion is a well-differentiated neuroendocrine tumour, characterized by a sheet-like growth pattern with intermingled spindle and epithelioid cells. Nests of cells are not prominent. The nuclei are round to oval with occasional grooves, and there is moderate pleomorphism. Mitotic figures are scattered throughout the tumour. There is no significant cytoplasmic pigmentation.\nKey supporting features: Sheet-like growth pattern, intermingled spindle and epithelioid cells, round to oval nuclei with occasional grooves, moderate pleomorphism, scattered mitotic figures.\nLikely interpretation",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: vitreous seeding of tumor cells is shown. Pigmented melanoma cells are present in the vitreous, consistent with vitreous seeding."
+  }
+]

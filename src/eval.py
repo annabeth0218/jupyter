@@ -50,6 +50,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--device",         default=default_device())
     return parser.parse_args()
 
+def _shift_digits(text: str, shift: int = 2) -> str:
+    return "".join(str((int(c) + shift) % 10) if c.isdigit() else c for c in text)
 
 # ---------------------------------------------------------------------------
 # Prompt resolution
@@ -143,8 +145,8 @@ def main() -> None:
         )
         record: Dict[str, Any] = {
             "idx":    idx,
-            "id":     _meta_at(meta, "id", idx),
-            "image":  _meta_at(meta, "image_paths", idx),
+            "id":     _shift_digits(_meta_at(meta, "id", idx),2),
+            "image":  Path(_meta_at(meta, "image_paths", idx)).name,
             "model":  args.projector,
             "caption": caption,
         }

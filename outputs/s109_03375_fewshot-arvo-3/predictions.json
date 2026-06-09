@@ -1,0 +1,98 @@
+[
+  {
+    "idx": 0,
+    "id": "S109-03375_01",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/epithelioid cell type and prominent nucleoli (arrow).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in a haphazard pattern. These cells exhibit moderate pleomorphism with irregular nuclei and prominent nucleoli. There is no clear interface with adjacent tissue or evidence of invasion. The cells are separated by scant collagenous stroma.\n\nKey supporting features: Dense spindle cell proliferation; moderate nuclear pleomorphism; prominent nucleoli; scant collagenous stroma.\n\nLikely interpretation: The lesion is consistent with a spindle cell neoplasm, such as a dermatofibrosarcoma protuberans or a low-grade fibromyxoid sarcoma. Further diagnostic confirmation would require immunohistochemical staining for specific markers like CD117, S100, and SMA to distinguish between these entities. However, without additional information, the diagnosis remains uncertain.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: epithelioid cell type and prominent nucleoli is shown. Epithelioid melanoma cells with prominent nucleoli are present."
+  },
+  {
+    "idx": 1,
+    "id": "S109-03375_01",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/low power shows a tumor in the subretinal area.jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in a haphazard pattern. These cells exhibit moderate pleomorphism with irregular nuclei and prominent nucleoli. There is no clear interface with adjacent tissue or evidence of invasion. The cells are separated by scant collagenous stroma.\n\nKey supporting features: Dense spindle cell proliferation; moderate nuclear pleomorphism; prominent nucleoli; scant collagenous stroma.\n\nLikely interpretation: The lesion is consistent with a spindle cell neoplasm, such as a dermatofibrosarcoma protuberans or a low-grade fibromyxoid sarcoma. Further diagnostic confirmation would require immunohistochemistry for specific markers like S100, CD117, and desmin. However, without additional information or specific staining patterns, the diagnosis remains uncertain.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: low power tumor in the subretinal area is shown. Low power view shows an intraocular melanoma mass involving the posterior choroid/subretinal region."
+  },
+  {
+    "idx": 2,
+    "id": "S109-03375_02",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/mitotic figure (arrow) (2).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in a haphazard pattern. These cells exhibit moderate pleomorphism with irregular nuclei and prominent nucleoli. There is no clear interface with adjacent tissue or evidence of invasion. The cells are separated by scant collagenous stroma.\n\nKey supporting features: Dense spindle cell proliferation; moderate nuclear pleomorphism; prominent nucleoli; scant collagenous stroma.\n\nLikely interpretation: The lesion is consistent with a spindle cell neoplasm, such as a dermatofibrosarcoma protuberans or a low-grade fibromyxoid sarcoma. Further diagnostic confirmation would require immunohistochemistry for specific markers like CD117, S100, and desmin. However, without additional information or specific staining patterns, the diagnosis remains uncertain.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: mitotic figure is shown. Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 3,
+    "id": "S109-03375_02",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/mitotic figure (arrow).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in a haphazard pattern. These cells exhibit moderate pleomorphism with irregular nuclei and prominent nucleoli. There is no clear interface with adjacent tissue or evidence of invasion. The cells are separated by scant collagenous stroma.\n\nKey supporting features: Dense spindle cell proliferation; moderate nuclear pleomorphism; prominent nucleoli; scant collagenous stroma.\n\nLikely interpretation: The lesion is consistent with a spindle cell neoplasm, such as a dermatofibrosarcoma protuberans or a low-grade fibromyxoid sarcoma. Further diagnostic confirmation would require immunohistochemical staining for specific markers like CD117, S100, and desmin to distinguish between these entities. However, without additional information or specific stains visible in the image, the diagnosis remains uncertain.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: mitotic figure is shown. Mitotic activity is identified in the melanoma cells."
+  },
+  {
+    "idx": 4,
+    "id": "S109-03375_03",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle A cell type has nuclear grooving (arrow).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in irregular nests and sheets. These cells exhibit moderate pleomorphism with variably sized nuclei, some showing nuclear grooves. There is no evident keratinization or glandular differentiation. The cytoplasm appears eosinophilic, suggesting possible myofibroblastic differentiation. The lesion extends into the surrounding stroma without clear invasion boundaries.\n\nKey supporting features: Dense spindle cell proliferation; moderate pleomorphism; variably sized nuclei; nuclear grooves; eosinophilic cytoplasm; lack of keratinization or gland formation.\n\nLikely interpretation: The lesion is consistent with a desmoplastic spindle cell proliferation, potentially representing a benign fibrohistiocytic tumor such as a dermatofibroma or a low-grade fibromyxoid sarcoma. However, without additional context or specific diagnostic markers, definitive identification is challenging. Further evaluation with immunohistochemistry could help",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle A cell type with nuclear grooving is shown. Spindle A melanoma cells with nuclear grooves are present."
+  },
+  {
+    "idx": 5,
+    "id": "S109-03375_03",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle B cell type (arrow).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in irregular nests and sheets. These cells exhibit moderate pleomorphism with variably sized nuclei, some showing nuclear grooves. There is no clear interface with adjacent tissue, suggesting a diffuse growth pattern. The cells are embedded within a myxoid matrix, which appears to be rich in extracellular mucin.\n\nKey supporting features: Dense spindle cell proliferation; irregular nests and sheets; moderate pleomorphism; nuclear grooves; myxoid matrix; extracellular mucin.\n\nLikely interpretation: The described lesion is consistent with a spindle cell sarcoma or a variant of leiomyosarcoma, given the presence of spindle cells, moderate pleomorphism, and myxoid stroma. However, without additional context or specific diagnostic markers, it's challenging to narrow down the exact subtype. Further evaluation with immunohistochemistry could provide more definitive insights. Uncertainty remains regarding the precise diagnosis due",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle B cell type is shown. Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 6,
+    "id": "S109-03375_04",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/spindle cell type (arrow).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by irregular, infiltrative growth patterns. The lesion is composed of sheets and nests of atypical spindle cells that show a marked pleomorphism. These cells are arranged in a diffuse pattern with no clear boundaries between them and the surrounding stroma. The nuclei of these cells are large, with prominent nucleoli and irregular nuclear membranes. Mitotic figures are abundant, indicating high cell proliferation.\n\nKey supporting features: Infiltrative growth, pleomorphic spindle cells, large nuclei, prominent nucleoli, mitotic activity.\n\nLikely interpretation: The lesion is consistent with a poorly differentiated sarcoma or a variant of a mesenchymal tumor, given the atypical spindle cell morphology, pleomorphism, and high mitotic rate. Further diagnostic confirmation would require immunohistochemistry for specific markers such as CD117, SMA, desmin, and S100 protein to narrow down the differential diagnosis. However, without additional information or specific stains",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle cell type is shown. Spindle melanoma cells are present."
+  },
+  {
+    "idx": 7,
+    "id": "S109-03375_04",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/spoindle B cell type (arrow).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in irregular nests and sheets. These cells exhibit moderate pleomorphism with variably sized nuclei, some showing nuclear grooves. There is no evident keratinization or glandular differentiation. The cells are embedded within a myxoid matrix, which is occasionally replaced by hyalinized collagen. The lesion shows a diffuse growth pattern, infiltrating the surrounding stroma without clear margins.\n\nKey supporting features: Dense spindle cell proliferation; irregular nests and sheets; moderate pleomorphism; myxoid matrix; hyalinized collagen; diffuse growth pattern.\n\nLikely interpretation: The described lesion is consistent with a spindle cell tumor, potentially a low-grade fibromyxoid sarcoma or a dermatofibrosarcoma protuberans, given the myxoid matrix and spindle cell morphology. However, definitive diagnosis requires immunohistochemistry for specific markers such as S100, CD117",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: spindle B cell type is shown. Spindle B melanoma cells are present."
+  },
+  {
+    "idx": 8,
+    "id": "S109-03375_05",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera (2).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in irregular nests and sheets. These cells exhibit moderate pleomorphism with variably sized nuclei, some showing nuclear grooves. There is no clear interface with adjacent tissue or evidence of invasion. The cells are embedded within a myxoid matrix, which appears to be rich in extracellular mucin.\n\nKey supporting features: Dense spindle cell proliferation; irregular nests and sheets; moderate pleomorphism; nuclear grooves; myxoid matrix; extracellular mucin.\n\nLikely interpretation: The lesion is consistent with a mesenchymal neoplasm, potentially a low-grade fibromyxoid sarcoma or a myxofibrosarcoma, given the presence of spindle cells in a myxoid background. However, without additional context or specific diagnostic markers, definitive identification cannot be made. Further evaluation with immunohistochemistry and molecular testing may be necessary for a precise diagnosis.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 9,
+    "id": "S109-03375_05",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera (circle).jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in a haphazard pattern. These cells exhibit moderate pleomorphism with irregular nuclei and prominent nucleoli. There is no clear interface with adjacent tissue or evidence of invasion. The cells are separated by scant collagenous stroma.\n\nKey supporting features: Dense spindle cell proliferation; moderate nuclear pleomorphism; prominent nucleoli; scant collagenous stroma.\n\nLikely interpretation: The lesion is consistent with a spindle cell neoplasm, such as a dermatofibrosarcoma protuberans or a low-grade fibromyxoid sarcoma. Further diagnostic confirmation would require immunohistochemistry for specific markers like CD117, S100, and SMA. However, without additional information or specific staining patterns, the diagnosis remains uncertain.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 10,
+    "id": "S109-03375_06",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/tumor invades sclera.jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in a haphazard pattern. These cells are embedded within a collagenous stroma, with occasional foci showing a more organized sheet-like arrangement. There is no clear interface with adjacent tissue, suggesting a diffuse growth pattern. Mitotic figures are present but not overly abundant.\n\nKey supporting features: Dense spindle cell proliferation; collagenous stroma; haphazard to sheet-like cell arrangement; absence of clear interface; mitotic figures.\n\nLikely interpretation: The lesion is consistent with a spindle cell neoplasm, such as a dermatofibrosarcoma protuberans or a low-grade fibromyxoid sarcoma. Further differentiation would require immunohistochemical stains for specific markers like S100, CD117, and desmin. However, without additional information, the diagnosis remains uncertain.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: tumor invades sclera is shown. Melanoma invades the sclera."
+  },
+  {
+    "idx": 11,
+    "id": "S109-03375_06",
+    "image": "/raid/jupyter-annabeth.lu.md12/Anna_CONCH/test/data/hail_mary_0501/S109-03375_Uveal melanoma/vitreous seeding of tumor cells.jpg",
+    "model": "checkpoints/proj-arvo-3.pt",
+    "caption": "Microscopic description: The image displays a lesion characterized by a dense proliferation of spindle-shaped cells, arranged in irregular nests and sheets. These cells exhibit moderate pleomorphism with variably sized nuclei, some showing nuclear grooves. There is no clear interface with adjacent tissue, suggesting a diffuse growth pattern. The cells are embedded within a fibrous stroma, with occasional mitotic figures visible.\n\nKey supporting features: Dense spindle cell proliferation; irregular nests and sheets; moderate pleomorphism; nuclear grooves; fibrous stroma; mitotic figures.\n\nLikely interpretation: The lesion is consistent with a spindle cell neoplasm, such as a dermatofibrosarcoma protuberans or a low-grade fibromyxoid sarcoma. Further differentiation would require immunohistochemical staining for specific markers like S100, CD34, and SMA. However, without additional information, the diagnosis remains uncertain.",
+    "reference": "Pathologic diagnosis: Choroidal melanoma.\nMicroscopic findings: vitreous seeding of tumor cells is shown. Pigmented melanoma cells are present in the vitreous, consistent with vitreous seeding."
+  }
+]
