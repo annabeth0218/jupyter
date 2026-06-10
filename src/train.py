@@ -24,7 +24,7 @@ CACHE_PT = f"{os.path.expandvars(STAGE_DIR)}/cache_0503.pt"
 PROMPT_FILE = Path(os.environ.get("PROMPT_FILE", "../prompts/base.txt"))
 PROMPT = PROMPT_FILE.read_text(encoding="utf-8")
 
-LLM_ID = "Qwen/Qwen2.5-7B"
+LLM_ID = "Qwen/Qwen2.5-7B-Instruct"
 V_TOKENS = 32              
 LR = 1e-4                  
 BSZ = 8
