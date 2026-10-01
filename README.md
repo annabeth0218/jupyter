@@ -26,6 +26,17 @@ bash src/run.sh <source> [-o OUTPUT_DIR] [-p PROMPT_FILE] [-c PROJECTOR] [-l LLM
 
 ### Environment overrides
 
+<table border="0">
+  <tr>
+    <td width="200">Short</td>
+    <td>Aligned Text</td>
+  </tr>
+  <tr>
+    <td>A very long sentence</td>
+    <td>Aligned Text</td>
+  </tr>
+</table>
+
 Variable | Default
 ---|---
 `CONDA_ENV=conch`  |  Conda environment for step 2 (projector + LLM).
