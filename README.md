@@ -5,7 +5,7 @@
 Before run:
 
 ```bash
-cd Anna_CONCH/CONCH
+cd Anna/CONCH
 conda activate conch
 export HF_TOKEN="hf_..."
 ```
