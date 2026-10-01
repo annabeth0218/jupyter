@@ -5,12 +5,12 @@
 Before run:
 
 ```bash
-cd Anna/CONCH
-conda activate conch
+cd Anna/CONCH  # or Anna/TITAN
+conda activate conch  # or conda activate titan
 export HF_TOKEN="hf_..."
 ```
 
-Use `python ../src/train.py` to train new projector. Use `../src/run.sh` to run the full pipeline on custom source:
+Use `python ../src/embed.py` to get slide/patch-level embeddings, venv dependant on CONCH version used. Use `python ../src/train.py` under conch venv to train new projector. Use `../src/run.sh` to run the full pipeline on custom source:
 
 ```bash
 bash src/run.sh <source> [-o OUTPUT_DIR] [-p PROMPT_FILE] [-c PROJECTOR] [-l LLM] [-n NAME] [-- extra args passed to eval.py]
