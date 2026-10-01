@@ -26,36 +26,23 @@ bash src/run.sh <source> [-o OUTPUT_DIR] [-p PROMPT_FILE] [-c PROJECTOR] [-l LLM
 
 ### Environment overrides
 
-<table border="0">
-  <tr>
-    <td width="200">Short</td>
-    <td>Aligned Text</td>
-  </tr>
-  <tr>
-    <td>A very long sentence</td>
-    <td>Aligned Text</td>
-  </tr>
-</table>
-
-Variable | Default
----|---
-`CONDA_ENV=conch`  |  Conda environment for step 2 (projector + LLM).
-`EMBED_ENV=titan`  |  Conda environment for step 1 (TITAN embedding).
-`PROJECTOR=../checkpoints/proj_xxxxx.pt`  |  Path to the projector checkpoint file.
-`LLM=Qwen/Qwen2.5-7B-Instruct`  |  Large Language Model identifier or path.
-`ID_KEY=id`  |  Key name used for unique IDs in the dataset.
-`IMAGE_KEY=image`  |  Key name used for images in the dataset.
-`RUN_4BIT=1`  |  Flag to enable 4-bit quantization model loading.
-`MAX_NEW_TOKENS=200`  |  Maximum number of new tokens to generate during inference.
-`TEMPERATURE=0.2`  |  Sampling temperature for generation randomness.
-`TOP_P=0.9`  |  Top-p (nucleus) sampling threshold.
-`SAMPLE=1`  |  Flag to enable sampling mode.
-`DEVICE=cuda`  |  Hardware device to run computation on (e.g., `cuda`, `cpu`).
-`KEEP_CACHE=1`  |  Keep the embedding cache after the run (useful for debugging).
-`CACHE=/path/to/cache.pt`  |  Path to an existing cache file to skip the embedding step entirely.
-`TITAN_FEAT_DIR=DIR`  |  Directory for per-slide patch features, reused across runs (Default: `<output-dir>/titan_feats`).
-`EMBED_ARGS="..."`  |  Extra arguments passed to `embed-s.py` (e.g., `--batch-size 128 --min-tissue 0.1`).
-`SKIP_CONDA=1`  |  Do not activate conda environments; use the currently active Python interpreter.
+* `CONDA_ENV=conch` :  Conda environment for step 2 (projector + LLM).
+* `EMBED_ENV=titan` :  Conda environment for step 1 (TITAN embedding).
+* `PROJECTOR=../checkpoints/proj_xxxxx.pt` :  Path to the projector checkpoint file.
+* `LLM=Qwen/Qwen2.5-7B-Instruct` :  Large Language Model identifier or path.
+* `ID_KEY=id` :  Key name used for unique IDs in the dataset.
+* `IMAGE_KEY=image` :  Key name used for images in the dataset.
+* `RUN_4BIT=1` :  Flag to enable 4-bit quantization model loading.
+* `MAX_NEW_TOKENS=200` :  Maximum number of new tokens to generate during inference.
+* `TEMPERATURE=0.2` :  Sampling temperature for generation randomness.
+* `TOP_P=0.9` :  Top-p (nucleus) sampling threshold.
+* `SAMPLE=1` :  Flag to enable sampling mode.
+* `DEVICE=cuda` :  Hardware device to run computation on (e.g., `cuda`, `cpu`).
+* `KEEP_CACHE=1` :  Keep the embedding cache after the run (useful for debugging).
+* `CACHE=/path/to/cache.pt` :  Path to an existing cache file to skip the embedding step entirely.
+* `TITAN_FEAT_DIR=DIR` :  Directory for per-slide patch features, reused across runs (Default: `<output-dir>/titan_feats`).
+* `EMBED_ARGS="..."` :  Extra arguments passed to `embed-s.py` (e.g., `--batch-size 128 --min-tissue 0.1`).
+* `SKIP_CONDA=1` :  Do not activate conda environments; use the currently active Python interpreter.
 
 ### Examples
 
