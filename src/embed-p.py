@@ -29,31 +29,30 @@ A torch .pt file with this structure:
             "captions":    [str, ...],
             "disease":     [str, ...],     # "" when missing
         },
-        "encoder": "CONCH ViT-B/16",
+        "encoder": "CONCH ViT-B/16"/"CONCH v1.5",
         "sources": [str, ...],             # input manifest paths
     }
 
 Usage
 -----
     # Single manifest
-    python get_embed.py manifest_who4e.clean.jsonl -o cache.pt
+    python embed-p.py manifest_who4e.clean.jsonl -o cache.pt
 
     # Multiple manifests
-    python get_embed.py m1.jsonl m2.jsonl m3.jsonl -o combined_cache.pt \\
+    python embed-p.py m1.jsonl m2.jsonl m3.jsonl -o combined_cache.pt \\
         --image-root /data/who4e
 
     # A folder of manifests (other files in the folder are ignored)
-    python get_embed.py /path/to/manifests_dir -o cache.pt
+    python embed-p.py /path/to/manifests_dir -o cache.pt
     python ../../train/get_embed.py data -o cache.pt
 
     # Mix manifests and folders
-    python get_embed.py extra.jsonl /path/to/manifests_dir -o cache.pt
+    python embed-p.py extra.jsonl /path/to/manifests_dir -o cache.pt
 
     # Recurse into subdirectories of a folder
-    python get_embed.py /path/to/manifests_dir --recursive -o cache.pt
+    python embed-p.py /path/to/manifests_dir --recursive -o cache.pt
 
-Set HF_TOKEN in the environment (or pass --hf-token) so the CONCH weights
-can be downloaded from MahmoodLab/conch on first use.
+Set HF_TOKEN in the environment (or pass --hf-token).
 """
 
 from __future__ import annotations
@@ -234,6 +233,7 @@ def build_cache(
     device = device or default_device()
 
     # Local import so the file can be inspected without CONCH installed.
+    '''
     from conch.open_clip_custom import create_model_from_pretrained
 
     print(f"Loading CONCH encoder: {encoder}", flush=True)
@@ -241,6 +241,16 @@ def build_cache(
         encoder, pretrained, hf_auth_token=hf_token
     )
     model = model.to(device).eval()
+    '''
+    
+    # new
+    from transformers import AutoModel
+    
+    print("Loading CONCH v1.5 (via MahmoodLab/TITAN)", flush=True)
+    titan = AutoModel.from_pretrained("MahmoodLab/TITAN", trust_remote_code=True, token=hf_token)
+    model, preprocess = titan.return_conch()
+    model = model.to(device).eval()
+    del titan
 
     embeddings: List[torch.Tensor] = []
     meta: Dict[str, List[str]] = {"image_paths": [], "captions": [], "disease": []}
@@ -252,7 +262,8 @@ def build_cache(
         for rec in tqdm(records, desc="CONCH embedding"):
             img = Image.open(rec["image_path"]).convert("RGB")
             tensor = preprocess(img).unsqueeze(0).to(device)
-            emb = model.encode_image(tensor, proj_contrast=False, normalize=False)
+            # emb = model.encode_image(tensor, proj_contrast=False, normalize=False)
+            emb = model(tensor)
             embeddings.append(emb.squeeze(0).cpu())
             meta["image_paths"].append(rec["image_path"])
             meta["captions"].append(rec["caption"])

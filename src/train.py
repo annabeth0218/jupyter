@@ -19,8 +19,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 # Config
 # ---------------------------------------------------------------------------
 
-STAGE_DIR = "opath"
-CACHE_PT = f"{os.path.expandvars(STAGE_DIR)}/cache_0503.pt"
+CACHE_PT = f"opath/cache_1001.pt"
 PROMPT_FILE = Path(os.environ.get("PROMPT_FILE", "../prompts/base.txt"))
 PROMPT = PROMPT_FILE.read_text(encoding="utf-8")
 
@@ -39,16 +38,20 @@ WARMUP_STEPS = 20
 VAL_FRAC = 0.10
 SPLIT_PATH = Path("../checkpoints/val_idx.json")
 
-def make_run_id() -> str:
+_pre = argparse.ArgumentParser(add_help=False)
+_pre.add_argument("-m", "--mode", choices=["p", "s"], default="s")
+MODE = _pre.parse_known_args()[0].mode
+
+def make_run_id(mode: str) -> str:
     chars = "0123456789abcdefghijklmnopqrstuvwxyz"
     n = int(time.time()) // 60   # minutes since epoch
     result = []
     while n:
         result.append(chars[n % 36])
         n //= 36
-    return "".join(reversed(result)) 
+    return f"{mode}-" + "".join(reversed(result)) 
     
-RUN_ID = make_run_id()
+RUN_ID = make_run_id(MODE)
 CKPT_PATH = Path(f"../checkpoints/proj_{RUN_ID}.pt")
 LOSS_PNG  = Path(f"../checkpoints/loss_{RUN_ID}.png")
 MODEL_CARD_PATH = Path(f"../checkpoints/proj_card_{RUN_ID}.json")
@@ -66,6 +69,7 @@ bnb_cfg = BitsAndBytesConfig(
 def write_model_card(path: Path, run_id: str, val_idx: list) -> None:
     card = {
         "run_id":        run_id,
+        "mode":          mode,
         "created_at":    datetime.datetime.now().isoformat(),
         "host":          platform.node(),
         # data
@@ -74,6 +78,7 @@ def write_model_card(path: Path, run_id: str, val_idx: list) -> None:
         "n_val":         len(val_idx),
         # architecture
         "encoder":       "CONCH ViT-B/16",
+        "embed_dim":     D,
         "llm":           LLM_ID,
         "v_tokens":      V_TOKENS,
         # training
@@ -99,9 +104,13 @@ def write_model_card(path: Path, run_id: str, val_idx: list) -> None:
 # Cache loading
 # ---------------------------------------------------------------------------
 
+ENCODER = "unknown"
+
 def load_cache(path: str = CACHE_PT):
-    """Load the CONCH embedding cache and pull out only the fields we use."""
+    """Load the img embedding cache and pull out only the fields we use."""
+    global ENCODER
     ckpt = torch.load(path, map_location="cpu")
+    ENCODER = ckpt.get("encoder", "unknown")
     img_embs = ckpt["embeddings"].float()
     img_embs = torch.nn.functional.normalize(img_embs, dim=1)
     meta = ckpt.get("meta", {}) or {}
@@ -562,6 +571,12 @@ def _parse_args() -> argparse.Namespace:
         "--reuse-split",
         action="store_true",
         help="Reuse the val_idx saved at SPLIT_PATH instead of re-splitting.",
+    )
+    p.add_argument(
+        "-m", "--mode",
+        choices=["p", "s"],
+        default="s",
+        help="Marked the run as patch/p or slide/s-level training.",
     )
     p.add_argument("--epochs", type=int, default=EPOCHS)
     p.add_argument(

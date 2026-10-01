@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
-# run.sh: embed whole-slide images with TITAN, then generate interpretations.
+# run.sh — embed pathology images then generate interpretations.
 #
 # Usage:
 #   bash run.sh <source> [-o OUTPUT_DIR] [-p PROMPT_FILE] [-c PROJECTOR]
 #               [-l LLM] [-n NAME] [-- extra args passed to eval.py]
 #
 # Positional:
-#   <source>    Slide file (.ndpi/.svs/...), folder of slides, glob, or
-#               JSONL / JSON / CSV manifest.
+#   <source>    Image file, folder, glob, URL, CSV, JSON, or JSONL manifest.
 #
 # Options:
 #   -o, --output-dir DIR     Where to write predictions.
@@ -15,19 +14,16 @@
 #   -n, --name NAME          Friendly name; writes <output-dir>/<name>.json
 #                            instead of <output-dir>/predictions.json.
 #   -p, --prompt-file FILE   Path to a .txt file used as the generation prompt.
-#   -c, --projector FILE     Projector .pt checkpoint (must be trained on a TITAN cache).
-#                            Default: $PROJECTOR, else the newest TITAN projector
-#                            in ../checkpoints/.
+#   -c, --projector FILE     Projector .pt checkpoint.
+#                            Default: $PROJECTOR or checkpoints/proj-arvo-llama.pt
 #   -l, --llm NAME           HF model id.
-#                            Default: $LLM, else the LLM stored in the projector
-#                            checkpoint, else Qwen/Qwen2.5-7B-Instruct.
+#                            Default: $LLM or Qwen/Qwen2-7B-Instruct
 #   -h, --help               Show this help.
 #
-# Environment overrides:
-#   CONDA_ENV=conch          # env for step 2 (projector + LLM)
-#   EMBED_ENV=titan          # env for step 1 (TITAN embedding)
-#   PROJECTOR=../checkpoints/proj_xxxxx.pt
-#   LLM=Qwen/Qwen2.5-7B-Instruct
+# Environment overrides (CLI flags win):
+#   CONDA_ENV=conch
+#   PROJECTOR=checkpoints/proj-arvo-llama.pt
+#   LLM=Qwen/Qwen2-7B-Instruct
 #   ID_KEY=id
 #   IMAGE_KEY=image
 #   RUN_4BIT=1
@@ -38,23 +34,16 @@
 #   DEVICE=cuda
 #   KEEP_CACHE=1             # keep the embedding cache after the run (for debugging)
 #   CACHE=/path/to/cache.pt  # use an existing cache and skip embedding entirely
-#   TITAN_FEAT_DIR=DIR       # per-slide patch features (reused across runs).
-#                            # Default: <output-dir>/titan_feats
-#   EMBED_ARGS="..."         # extra args for embed-s.py, e.g. "--batch-size 128 --min-tissue 0.1"
-#   SKIP_CONDA=1             # do not activate conda envs (use the current python)
 #
 # Examples:
-#   bash run.sh /data/slides/A123.ndpi
-#   bash run.sh manifest.jsonl -c ../checkpoints/proj_abcde.pt -p ../prompts/fewshot-4.txt -o outputs/s109
-#   bash run.sh "/data/slides/*.ndpi" -n batch1
+#   bash run.sh manifest.jsonl -c checkpoints/proj.pt -p prompts/few_shot.txt -o outputs/s109
+#   bash run.sh manifest.jsonl -n s109_run1
 #   KEEP_CACHE=1 bash run.sh manifest.jsonl          # inspect cache afterwards
 #   CACHE=outputs/prev/cache.pt bash run.sh manifest.jsonl   # reuse existing cache
 
 set -euo pipefail
 
-CALLER_DIR="$(pwd)"
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SCRIPT_PATH="$ROOT_DIR/$(basename "${BASH_SOURCE[0]}")"
 cd "$ROOT_DIR"
 
 # ---------------------------------------------------------------------------
@@ -62,28 +51,10 @@ cd "$ROOT_DIR"
 # ---------------------------------------------------------------------------
 
 print_help() {
-  awk 'NR==1 {next} /^#/ {sub(/^# ?/, ""); print; next} {exit}' "$SCRIPT_PATH"
+  awk 'NR==1 {next} /^#/ {sub(/^# ?/, ""); print; next} {exit}' "${BASH_SOURCE[0]}"
 }
 
 die() { echo "ERROR: $*" >&2; exit 1; }
-
-# Paths are resolved relative to src/ (as in the original run.sh); if that does
-# not exist but the path exists relative to where you called run.sh from, use that.
-resolve_path() {
-  local p="$1"
-  [[ -z "$p" || "$p" == /* || "$p" == http* ]] && { echo "$p"; return; }
-  if [[ -e "$p" ]] || compgen -G "$p" >/dev/null 2>&1; then echo "$p"; return; fi
-  if [[ -e "$CALLER_DIR/$p" ]] || compgen -G "$CALLER_DIR/$p" >/dev/null 2>&1; then
-    echo "$CALLER_DIR/$p"; return
-  fi
-  echo "$p"
-}
-
-activate_env() {
-  [[ "${SKIP_CONDA:-0}" == "1" ]] && return 0
-  conda activate "$1" || die "could not activate conda env '$1'"
-  echo "Using conda env: $1  ($(which python))"
-}
 
 # ---------------------------------------------------------------------------
 # Defaults from env
@@ -93,13 +64,12 @@ SOURCE=""
 OUT_DIR=""
 NAME=""
 PROMPT_FILE=""
-PROJECTOR="${PROJECTOR:-}"
-LLM="${LLM:-}"
+PROJECTOR="${PROJECTOR:-checkpoints/proj-arvo-llama.pt}"
+LLM="${LLM:-Qwen/Qwen2-7B-Instruct}"
 
 CONDA_ENV="${CONDA_ENV:-conch}"
-EMBED_ENV="${EMBED_ENV:-titan}"
-ID_KEY="${ID_KEY:-id}"
-IMAGE_KEY="${IMAGE_KEY:-image}"
+#ID_KEY="${ID_KEY:-id}"
+#IMAGE_KEY="${IMAGE_KEY:-image}"
 RUN_4BIT="${RUN_4BIT:-0}"
 MAX_NEW_TOKENS="${MAX_NEW_TOKENS:-200}"
 TEMPERATURE="${TEMPERATURE:-0.2}"
@@ -108,8 +78,6 @@ SAMPLE="${SAMPLE:-0}"
 DEVICE="${DEVICE:-}"
 KEEP_CACHE="${KEEP_CACHE:-0}"
 CACHE="${CACHE:-}"   # if set, skip embedding and use this cache directly
-TITAN_FEAT_DIR="${TITAN_FEAT_DIR:-}"
-EMBED_ARGS_EXTRA="${EMBED_ARGS:-}"
 
 # ---------------------------------------------------------------------------
 # Parse CLI
@@ -134,25 +102,18 @@ done
 
 [[ -n "$SOURCE" ]] || { print_help >&2; die "missing <source> argument."; }
 
-SOURCE="$(resolve_path "$SOURCE")"
-PROMPT_FILE="$(resolve_path "$PROMPT_FILE")"
-PROJECTOR="$(resolve_path "$PROJECTOR")"
-CACHE="$(resolve_path "$CACHE")"
-
 OUT_DIR="${OUT_DIR:-outputs/run_$(date +%Y%m%d_%H%M%S)}"
 mkdir -p "$OUT_DIR"
-TITAN_FEAT_DIR="${TITAN_FEAT_DIR:-$OUT_DIR/titan_feats}"
 
 # ---------------------------------------------------------------------------
-# Conda
+# Activate conda
 # ---------------------------------------------------------------------------
 
-if [[ "${SKIP_CONDA:-0}" != "1" ]]; then
-  command -v conda >/dev/null 2>&1 || die "'conda' not found on PATH (or set SKIP_CONDA=1)."
-  # shellcheck disable=SC1091
-  source "$(conda info --base)/etc/profile.d/conda.sh"
-fi
-activate_env "$CONDA_ENV"
+command -v conda >/dev/null 2>&1 || die "'conda' not found on PATH."
+# shellcheck disable=SC1091
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate "$CONDA_ENV"
+echo "Using conda env: $CONDA_ENV  ($(which python))"
 
 # ---------------------------------------------------------------------------
 # Preflight checks
@@ -161,25 +122,10 @@ activate_env "$CONDA_ENV"
 [[ -n "${HF_TOKEN:-}" ]] || die \
   "HF_TOKEN is not set. Create a read token at https://huggingface.co/settings/tokens and run: export HF_TOKEN=\"hf_...\""
 
-# Default projector: newest checkpoint in ../checkpoints trained on a TITAN cache.
-if [[ -z "$PROJECTOR" ]]; then
-  PROJECTOR="$(python info.py --latest ../checkpoints 2>/dev/null || true)"
-  [[ -n "$PROJECTOR" ]] || die \
-    "No TITAN projector found in ../checkpoints. Train one (python ../src/train.py) or pass -c PROJECTOR."
-fi
-[[ -f "$PROJECTOR" ]] || die "Projector checkpoint not found: $PROJECTOR"
+[[ -f "$PROJECTOR" ]] || die \
+  "Projector checkpoint not found: $PROJECTOR"
 
-# Projector must accept 768-d TITAN embeddings (old CONCH projectors are 512-d).
-PROJ_D="$(python info.py --field D "$PROJECTOR")" || die "could not read projector: $PROJECTOR"
-[[ "$PROJ_D" == "768" ]] || die \
-  "Projector $PROJECTOR expects ${PROJ_D}-d input, but TITAN embeddings are 768-d. This is probably a CONCH projector; train a new one on a TITAN cache."
-
-if [[ -z "$LLM" ]]; then
-  LLM="$(python info.py --field llm "$PROJECTOR" 2>/dev/null || true)"
-  LLM="${LLM:-Qwen/Qwen2.5-7B-Instruct}"
-fi
-
-[[ -e "$SOURCE" || "$SOURCE" == http* ]] || compgen -G "$SOURCE" >/dev/null 2>&1 || die \
+[[ -e "$SOURCE" || "$SOURCE" == http* ]] || die \
   "Input source not found: $SOURCE"
 
 if [[ -n "$PROMPT_FILE" ]]; then
@@ -219,10 +165,8 @@ echo "Run configuration:"
 echo "  source        : $SOURCE"
 echo "  output dir    : $OUT_DIR"
 echo "  predictions   : $PRED"
-echo "  encoder       : TITAN (env: $EMBED_ENV)"
-echo "  patch feats   : $TITAN_FEAT_DIR"
 echo "  projector     : $PROJECTOR"
-echo "  llm           : $LLM  (env: $CONDA_ENV)"
+echo "  llm           : $LLM"
 echo "  prompt file   : ${PROMPT_FILE:-<eval.py default>}"
 echo "  device        : ${DEVICE:-auto}"
 echo "  4-bit load    : $RUN_4BIT"
@@ -236,28 +180,19 @@ echo
 # ---------------------------------------------------------------------------
 
 if [[ "$OWNS_CACHE" == "1" ]]; then
-  echo "Step 1/2: TITAN embedding of $SOURCE"
-  activate_env "$EMBED_ENV"
+  echo "Step 1/2: embedding images from $SOURCE"
   EMBED_ARGS=(
     "$SOURCE"
-    --image-key "$IMAGE_KEY"
-    --id-key    "$ID_KEY"
+#    --image-key "$IMAGE_KEY"
+#    --id-key    "$ID_KEY"
     --output    "$CACHE"
-    --feat-dir  "$TITAN_FEAT_DIR"
   )
   [[ -n "$DEVICE" ]] && EMBED_ARGS+=(--device "$DEVICE")
-  # shellcheck disable=SC2206
-  [[ -n "$EMBED_ARGS_EXTRA" ]] && EMBED_ARGS+=($EMBED_ARGS_EXTRA)
-  python embed-s.py "${EMBED_ARGS[@]}"
-  activate_env "$CONDA_ENV"
+  python embed-p.py "${EMBED_ARGS[@]}"
 else
-  echo "Step 1/2: SKIPPED: using existing cache: $CACHE"
+  echo "Step 1/2: SKIPPED — using existing cache: $CACHE"
   [[ -f "$CACHE" ]] || die "Provided CACHE not found: $CACHE"
 fi
-
-CACHE_D="$(python info.py --cache-dim "$CACHE")" || die "could not read cache: $CACHE"
-[[ "$CACHE_D" == "$PROJ_D" ]] || die \
-  "Cache embeddings are ${CACHE_D}-d but the projector expects ${PROJ_D}-d. Was this cache built with the CONCH embed-s.py?"
 
 # ---------------------------------------------------------------------------
 # Step 2: generate

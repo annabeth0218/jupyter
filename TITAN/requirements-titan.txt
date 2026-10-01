@@ -1,0 +1,12 @@
+# Env for step 1 (TITAN embedding). Install with setup_env.sh, which first
+# installs torch==2.0.1 / torchvision==0.15.2 for your CUDA version.
+# TITAN itself (pins timm==1.0.3, einops, einops-exts, transformers==4.46.0, h5py ...):
+titan @ git+https://github.com/mahmoodlab/TITAN.git
+numpy<2
+pillow
+tqdm
+huggingface_hub
+# whole-slide reading (.ndpi / .svs / ...); openslide-bin ships the C library,
+# no sudo / apt needed. If it fails on an old glibc: conda install -c conda-forge openslide
+openslide-python>=1.4
+openslide-bin>=4.0
