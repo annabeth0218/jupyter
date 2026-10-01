@@ -38,10 +38,10 @@ bash src/run.sh <source> [-o OUTPUT_DIR] [-p PROMPT_FILE] [-c PROJECTOR] [-l LLM
 * `TOP_P=0.9` :  Top-p (nucleus) sampling threshold.
 * `SAMPLE=1` :  Flag to enable sampling mode.
 * `DEVICE=cuda` :  Hardware device to run computation on (e.g., `cuda`, `cpu`).
-* `KEEP_CACHE=1` :  Keep the embedding cache after the run (useful for debugging).
+* `KEEP_CACHE=1` :  Keep the embedding cache after the run.
 * `CACHE=/path/to/cache.pt` :  Path to an existing cache file to skip the embedding step entirely.
-* `TITAN_FEAT_DIR=DIR` :  Directory for per-slide patch features, reused across runs (Default: `<output-dir>/titan_feats`).
-* `EMBED_ARGS="..."` :  Extra arguments passed to `embed-s.py` (e.g., `--batch-size 128 --min-tissue 0.1`).
+* `TITAN_FEAT_DIR=DIR` :  Directory for per-slide patch features, reused across runs.
+* `EMBED_ARGS="..."` :  Extra arguments passed to `embed-s.py`.
 * `SKIP_CONDA=1` :  Do not activate conda environments; use the currently active Python interpreter.
 
 ### Examples
